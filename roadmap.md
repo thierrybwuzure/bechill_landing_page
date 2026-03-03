@@ -14,15 +14,15 @@
 
 <!-- Section 3 -->
 # 3 Présentation du Site --> COSMINA & THIERRY
-- <h1> Pitch Phrase
-- <p> Paragraphe explicatif
+- h1: Pitch Phrase
+- p: Paragraphe explicatif
 
 <!-- Section 4 -->
 # 4 Services --> COSMINA & THIERRY
 
 - 4 Flexbox : Texte + CTA + image
-- <h2> Titre du service
-- <p> Descriptif du service
+- h2: Titre du service
+- p: Descriptif du service
 - CTA
 
 <!-- Section 5 --> 
@@ -33,8 +33,8 @@
 
 # 6 Page Formation --> DION
 - Flexbox
-- <h2> : Nom de la formation
-- <p> : descriptif formation
+- h2: Nom de la formation
+- p: descriptif formation
 
 <!-- Section 6 -->
 
@@ -49,13 +49,13 @@
 <!-- Section 8 -->
 # 9 Avis --> COSMINA & THIERRY
 
-- <p> en texte défilant``
+- p: en texte défilant``
 
 <!-- Section 9 -->
 # 10 Newsletter/Contact --> DION
-- <h2>
-- <input>
-- Bouton <envoyer>
+- h2
+- input
+- Bouton envoyer
 
 <!-- Section 10 --> 
 # 11 Footer --> DION
