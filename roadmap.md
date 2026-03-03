@@ -13,50 +13,50 @@
 - Bouton CTA : lien vers réservation https://salonkee.be/salon/be-chill
 
 <!-- Section 3 -->
-# 3 Présentation du Site
+# 3 Présentation du Site --> COSMINA & THIERRY
 - <h1> Pitch Phrase
 - <p> Paragraphe explicatif
 
 <!-- Section 4 -->
-# 4 Services
+# 4 Services --> COSMINA & THIERRY
 
 - 4 Flexbox : Texte + CTA + image
 - <h2> Titre du service
 - <p> Descriptif du service
 - CTA
 
-<!-- Section 5 -->
+<!-- Section 5 --> 
 
-# 5 Formation 
+# 5 Formation --> DION
 - Background Image
 - Bouton CTA : lien vers la page formation
 
-# 6 Page Formation
+# 6 Page Formation --> DION
 - Flexbox
 - <h2> : Nom de la formation
 - <p> : descriptif formation
 
 <!-- Section 6 -->
 
-# 7 À propos de nous + Horaires
+# 7 À propos de nous + Horaires --> COSMINA & THIERRY
 - Flexbox
 
 <!-- Section 7 -->
 
-# 8 Google Maps Location
+# 8 Google Maps Location --> COSMINA & THIERRY
 - Carte intégrée (embedded)
 
 <!-- Section 8 -->
-# 9 Avis
+# 9 Avis --> COSMINA & THIERRY
 
 - <p> en texte défilant``
 
 <!-- Section 9 -->
-# 10 Newsletter
+# 10 Newsletter/Contact --> DION
 - <h2>
 - <input>
 - Bouton <envoyer>
 
-<!-- Section 10 -->
-# 11 Footer
+<!-- Section 10 --> 
+# 11 Footer --> DION
 - icons réseaux sociaux
