@@ -72,7 +72,7 @@ header {
 /* Logo */
 
 .header_hand_logo {
-    width: 15%;
+    width: 60%;
 }
 
 /* Hamburger Menu */
@@ -370,33 +370,6 @@ p {
 
 /* Nos Soins */
 
-/* Grid Layout */
-
-/* .soins_container {
-    width: auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1px;
-    padding: 24px;
-    background-color: #1f1c18;
-    color: white;
-}
-
-@media (min-width: 1024px) {
-    .soins_container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-.soins_container small {
-    color: #E8D5A3;
-    text-transform: uppercase;
-}
-
-.soins_header {
-    grid-column: 1 / -1;
-} */
-
 /* Flexbox layout */
 
 .soins_container {
@@ -404,11 +377,9 @@ p {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    gap: 1px;
     background-color: #4A241D;
     color: white;
 }
-
 
 .soins {
     background-color: #4A241D;
@@ -418,13 +389,14 @@ p {
     text-transform: uppercase;
     color: #FFD074;
     text-align: center;
+    margin-left: 25px;
 }
 
 .soins_header h2 {
+    width: 280px;
     font-family: 'Playfair Display';
     font-size: 52px;
     font-weight: 300;
-    width: 280px;
     margin-left: 25px;
 }
 
@@ -444,29 +416,13 @@ p {
     justify-content: space-between;
     align-items: baseline;
     font-family: 'Playfair Display';
-    font-weight: 300;
+    font-weight: 100;
     font-size: 1.4rem;
-    color: #1f1c18;
+    color: whitesmoke;
 }
 
-.soins_price {
-    color: #E8D5A3;
-    font-family: 'DM Sans';
-    font-weight: 200;
-    font-size: 1.1rem;
-}
-
-.soins_badge {
-    justify-content: center;
-    font-family: 'DM Sans';
-    font-size: 0.60rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    color: #2C2822;
-    background: #C9A84C;
-    padding: 2px 6px;
-    border-radius: 2px;
-    letter-spacing: 1px;
+.flex {
+    padding: 0 2rem 2rem;
 }
 
 .soins p {
@@ -476,10 +432,11 @@ p {
 }
 
 .soins a {
+    display: block;
     text-transform: uppercase;
     text-decoration: none;
     font-size: 0.8rem;
-    color: #a5a39f;
+    color: whitesmoke;
 }
 
 .soins a::after {
@@ -487,12 +444,15 @@ p {
 }
 
 .cta6 {
-    justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 310px;
     background: transparent;
     border: 1px solid rgb(158, 158, 158);
     border-radius: 4px;
-    margin: 40px 0;
+    margin: 40px auto;
+    text-align: center;
 }
 
 /* Immersion */
@@ -572,9 +532,9 @@ p {
 /* Horaires */
 
 .horaires {
+    width: 50%;
     flex: 1;
     margin: 0 auto;
-    padding: 20px;
     background-color: #f5f3f0;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
@@ -796,6 +756,12 @@ button:hover {
 
 @media (min-width: 768px) {
 
+    /* Header */
+
+    .header_hand_logo {
+        width: 25%;
+    }
+
     /* Hero */
     .hero-container {
         justify-content: center;
@@ -804,25 +770,54 @@ button:hover {
     }
 
     /* Soins */
-    .soins_container {
-        width: 100%;
-    }
+
+    /* Soins */
 
     .soins {
         display: flex;
+        width: 100%;
+        font-family: 'DM Sans';
+        font-weight: 300;
+        color: #a5a39f;
+        background-color: whitesmoke;
+    }
+
+    .soins h3 {
+        color: black;
+        padding: 20px;
+        font-size: 1.6rem;
+        margin: 0;
+        margin-left: 40px;
+    }
+
+    .soins p {
+        max-width: 80%;
+        font-size: 1.2rem;
+        margin-left: 40px;
+        padding: 0 20px;
+    }
+
+    .soins a {
+        display: block;
+        color: black;
+        margin-left: 60px;
+    }
+
+    .soins_container {
         width: 100%;
     }
 
     .soins img {
         flex: 1;
         width: 50%;
-        height: 18.75rem;
+        height: 250px;
     }
 
     .flex {
         flex: 1;
         display: flex;
         flex-direction: column;
+        padding: 0;
     }
 
     .flex_reverse {
