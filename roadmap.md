@@ -49,7 +49,7 @@
 <!-- Section 7 -->
 # 9 Avis --> COSMINA & THIERRY
 
-- p: en texte défilant``
+- p: en texte défilant`
 
 <!-- Section 8 -->
 # 10 Newsletter/Contact --> DION
