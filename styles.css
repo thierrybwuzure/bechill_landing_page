@@ -795,6 +795,7 @@ button:hover {
         font-size: 1.2rem;
         margin-left: 40px;
         padding: 0 20px;
+        color: #8A7A6A;
     }
 
     .soins a {
@@ -810,7 +811,7 @@ button:hover {
     .soins img {
         flex: 1;
         width: 50%;
-        height: 250px;
+        height: 270px;
     }
 
     .flex {
