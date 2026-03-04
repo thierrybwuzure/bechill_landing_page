@@ -8,6 +8,11 @@ body {
     background: #f5f5f5;
 }
 
+
+/* * {
+    outline: 1px solid orange;
+} */
+
 /* Tokens */
 
 :root {
@@ -29,7 +34,6 @@ body {
 header {
     width: 100%;
     background: #2d2d2d;
-    /* background: transparent; */
     color: whitesmoke;
     padding: 0.5em 1em;
     position: fixed;
@@ -188,6 +192,7 @@ header {
 /* Hero */
 
 .hero-container {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -195,28 +200,28 @@ header {
     gap: 18px;
     height: 100vh;
     background-color: #2c2822;
-    background-image: url(./asset/katherine-hanlon-83RTpUBjyYY-unsplash.jpg);
-    background-size: cover;
-    background-position-x: center;
-    background-repeat: no-repeat;
     text-align: center;
     padding: 25px;
+    overflow: hidden;
 }
 
-@media (min-width: 768px) {
-    .hero-container {
-        background-image: url(./asset/katherine-hanlon-83RTpUBjyYY-unsplash.jpg);
-        background-size: cover;
-        justify-content: center;
-        align-items: center;
-        padding-top: 80px;
-    }
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
 
-    .cta1 {}
+.hero-container>*:not(.hero-video) {
+    position: relative;
+    z-index: 1;
 }
 
 .logo_typo {
-    width: 25rem;
+    width: 15rem;
 }
 
 .hero-container small {
@@ -226,10 +231,11 @@ header {
     font-family: 'DM Sans';
     font-size: 12px;
     font-weight: 200;
-    /* margin-top: -100px; */
 }
 
+
 .hero-p1 {
+    width: 85%;
     color: var(--white-color-primary);
     font-family: 'Playfair Display';
     font-size: 2.8rem;
@@ -316,7 +322,7 @@ header {
 }
 
 
-/* Notre Philosophie */
+/* Philosophy */
 
 .philo_container {
     display: flex;
@@ -326,15 +332,23 @@ header {
     background-color: #FAF8F3;
     padding: 24px;
     text-align: center;
+    height: 40vh;
 }
 
 .philo_container small,
 p {
     font-family: 'DM Sans';
+    font-size: 1rem;
 }
 
 .philo_container h2 {
     font-family: 'Playfair Display';
+    font-size: 2.2rem;
+    font-weight: 300;
+}
+
+.philo_h2-span {
+    color: #E8D5A3;
 }
 
 .philo_container small {
@@ -343,14 +357,23 @@ p {
 }
 
 .philo_container p {
-    font-size: 1.3rem;
+    width: 80%;
+    font-size: 1.2rem;
     font-weight: 300;
     color: #8A7A6A;
+    line-height: 2.5rem;
+}
+
+.star_icon {
+    margin-top: 25px;
 }
 
 /* Nos Soins */
 
-.soins_container {
+/* Grid Layout */
+
+/* .soins_container {
+    width: auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1px;
@@ -372,11 +395,29 @@ p {
 
 .soins_header {
     grid-column: 1 / -1;
+} */
+
+/* Flexbox layout */
+
+.soins_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1px;
+    background-color: #4A241D;
+    color: white;
 }
 
+
 .soins {
-    background-color: #2C2822;
-    padding: 25px;
+    background-color: #4A241D;
+}
+
+.soins_header small {
+    text-transform: uppercase;
+    color: #FFD074;
+    text-align: center;
 }
 
 .soins_header h2 {
@@ -384,18 +425,18 @@ p {
     font-size: 52px;
     font-weight: 300;
     width: 280px;
+    margin-left: 25px;
 }
 
 .soins_header span {
-    color: #E8D5A3;
+    /* color: #E8D5A3; */
+    color: #FFD074;
 }
 
 .soins_img {
-    width: calc(100% + 50px);
-    margin: -25px -25px 16px -25px;
-    height: 200px;
+    width: 100%;
+    height: 12.5rem;
     object-fit: cover;
-    border-radius: 4px;
 }
 
 .soins h3 {
@@ -405,7 +446,7 @@ p {
     font-family: 'Playfair Display';
     font-weight: 300;
     font-size: 1.4rem;
-    color: #FAF8F3;
+    color: #1f1c18;
 }
 
 .soins_price {
@@ -454,11 +495,85 @@ p {
     margin: 40px 0;
 }
 
+/* Immersion */
+
+.experience_container {
+    display: flex;
+    flex-direction: vertical;
+    gap: 32px;
+    background-color: #e6e1db;
+    padding: 24px;
+    color: #FAF8F3;
+}
+
+
+/* Expérience élégante /  */
+
+.step {
+    margin-top: 40px;
+}
+
+.step-number {
+    font-size: 32px;
+    font-weight: bold;
+    color: #c5a27a;
+}
+
+.step-title {
+    font-size: 20px;
+    margin: 10px 0 5px;
+    font-weight: 600;
+}
+
+.step-text {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+
+
+
+.experience_box {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.experience_num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border: 2px solid #4CB96B;
+    border-radius: 8px;
+    font-size: 2.8rem;
+    font-family: 'DM Serif Display', serif;
+    color: #C9A84C;
+    background: #fff;
+    font-weight: 400;
+}
+
+.experience_texte h3 {
+    font-size: 1.4rem;
+    font-family: 'DM Serif Display', serif;
+    margin-bottom: 8px;
+    color: #222;
+}
+
+.experience_texte p {
+    font-size: 1.1rem;
+    color: #6B6B6B;
+    margin: 0;
+}
+
 /* Horaires */
 
 .horaires {
-    max-width: 500px;
-    margin: 40px auto;
+    flex: 1;
+    margin: 0 auto;
     padding: 20px;
     background-color: #f5f3f0;
     border-radius: 12px;
@@ -490,6 +605,15 @@ p {
     color: #555;
 }
 
+/* Nous trouver */
+
+.nous_trouver {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
 /* Location */
 
 .localisation {
@@ -502,7 +626,7 @@ p {
     gap: 50px;
     align-items: center;
     justify-content: center;
-    max-width: 1100px;
+    max-width: 500px;
     margin: 0 auto;
     flex-wrap: wrap;
 }
@@ -558,4 +682,163 @@ p {
 
 .btn-itineraire:hover {
     transform: translateY(-3px);
+}
+
+/* Footer */
+
+footer {
+    background: #2d2d2d;
+    color: #fff;
+    padding: 2em 0 1em 0;
+    text-align: center;
+    margin-top: 3em;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4em;
+    margin-bottom: 1em;
+}
+
+.social-icons img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+footer p {
+    font-size: 1em;
+    color: #ccc;
+    margin-top: 0.5em;
+}
+
+/* Carousel */
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f6f4ef;
+    margin: 0;
+}
+
+.reviews {
+    padding: 60px 20px;
+}
+
+.reviews h2 {
+    text-align: center;
+}
+
+.stars {
+    color: #c8a96a;
+    font-size: 22px;
+    font-family: 'DM Sans';
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.carousel-container {
+    width: 500px;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.review-card {
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    background: white;
+    padding: 30px;
+    border: 2px solid #e3dccf;
+    border-radius: 12px;
+}
+
+.review-card p {
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.review-card span {
+    color: #666;
+    font-size: 14px;
+}
+
+button {
+    background: #c8a96a;
+    border: none;
+    color: white;
+    font-size: 20px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+button:hover {
+    background: #b39357;
+}
+
+/* Responsive */
+
+@media (min-width: 768px) {
+
+    /* Hero */
+    .hero-container {
+        justify-content: center;
+        align-items: center;
+        padding-top: 80px;
+    }
+
+    /* Soins */
+    .soins_container {
+        width: 100%;
+    }
+
+    .soins {
+        display: flex;
+        width: 100%;
+    }
+
+    .soins img {
+        flex: 1;
+        width: 50%;
+        height: 18.75rem;
+    }
+
+    .flex {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .flex_reverse {
+        flex-direction: row-reverse;
+    }
+
+    .philo_container {
+        height: 65vh;
+    }
+
+    .philo_container h2 {
+        font-size: 4rem;
+    }
+
+    .philo_container p {
+        width: 45%;
+        font-size: 1.5rem;
+    }
 }

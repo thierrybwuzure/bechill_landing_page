@@ -13,6 +13,52 @@ window.addEventListener('click', (e) => {
     }
 });
 
+// Carousel
+
+const track = document.querySelector(".carousel-track");
+const cards = document.querySelectorAll(".review-card");
+
+let index = 0;
+
+function updateSlide() {
+    track.style.transform = `translateX(-${index * 100}%)`;
+}
+
+document.querySelector(".next").onclick = function () {
+
+    index++;
+
+    if (index >= cards.length) {
+        index = 0;
+    }
+
+    updateSlide();
+
+};
+
+document.querySelector(".prev").onclick = function () {
+
+    index--;
+
+    if (index < 0) {
+        index = cards.length - 1;
+    }
+
+    updateSlide();
+
+};
+
+setInterval(() => {
+
+    index++;
+
+    if (index >= cards.length) {
+        index = 0;
+    }
+
+    updateSlide();
+
+}, 5000);
 
 // Header scroll background
 /* window.addEventListener('scroll', () => {
@@ -24,7 +70,7 @@ window.addEventListener('click', (e) => {
     }
 });
 
-
+CSS
 header.scrolled {
     background: #2d2d2d;
     transition: background 0.3s ease;

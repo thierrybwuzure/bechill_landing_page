@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Be Chill Massages</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- DEBUG: remove when done -->
 </head>
 
 <body>
@@ -30,7 +31,7 @@
                 </nav>
             </div>
             <div class="header_center">
-                <img class="header_hand_logo" src="./asset/BE CHILL blanc  logo.png" alt="">
+                <img class="header_hand_logo" src="./asset/BE CHILL blanc  Typo.png" alt="">
             </div>
             <div class="header_aside header_aside-right" style="">
                 <a href="#contact" class="contact-btn">Contact</a>
@@ -41,14 +42,16 @@
     <!-- Section 1 - Hero -->
 
     <div class="hero-container">
-        <img class="logo_typo" src="./asset/BE CHILL blanc  Typo.png" alt="">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="./asset/6187080-uhd_3840_2160_25fps.mp4" type="video/mp4">
+        </video>
+        <img class="logo_typo" src="./asset/BE CHILL blanc  logo.png" alt="">
         <small>Be Chill • Uccle, Belgique</small>
         <p class="hero-p1">Prenez soin de votre esprit<br><span class="hero-p1-span"><i>en prenant soin de
                     votre
                     corps</i></span></p>
         <p class="hero-p2">Massage personnalisé & rituels de bien-être à Uccle</p>
-        <button class="cta1">Réserver maintenant</button>
-
+        <button class="cta1">S'offrir un instant</button>
     </div>
 
 
@@ -57,13 +60,13 @@
 
     <div class="philo_container">
         <small>Notre philosophie</small>
-        <h2>Le toucher <span><i>de l'âme</i></span></h2>
+        <h2>Le toucher <br><span class="philo_h2-span"><i>de l'âme</i></span></h2>
         <p>Passionnée par les bienfaits du massage,
             formée aux techniques venues des
             quatre coins du monde, Be Chill vous
             accompagne vers une détente profonde,
             entre corps et esprit.</p>
-        <img src="./asset/star.png" alt="">
+        <img class="star_icon" src="./asset/star.png" alt="star icon">
     </div>
 
     <!-- Section 3 - Nos Soins -->
@@ -75,105 +78,230 @@
             <h2>L'essentiel<span><i> du bien-être</i></span></h2>
         </div>
 
+        <div>
+            <div class="soins">
+                <img class="soins_img" src="./asset/essential oil.jpg" alt="">
+                <div class="flex">
+                    <h3>Massage<span class="soins_price"></span></h3>
+                    <p>Adapté à vos besoins du moment, tension par
+                        tension, dans un dialogue constant avec votre
+                        corps.</p>
+                    <a href="#soins">Réserver</a>
+                </div>
+            </div>
+            <div class="soins flex_reverse">
+                <img class="soins_img" src="./asset/stone_massage.jpg" alt="">
+                <div class="flex">
+                    <h3>Pierres chaudes<span class="soins_price"></span></h3>
+                    <p>La chaleur des pierres volcaniques libère les
+                        tensions musculaires les plus profondes.</p>
+                    <a href="#soins">Réserver</a>
+                </div>
+            </div>
+        </div>
 
-        <div class="soins">
-            <img class="soins_img" src="./asset/head-massage.jpg" alt="">
-            <h3>Massage Personnalisé<span class="soins_price"></span></h3>
-            <p>Adapté à vos besoins du moment, tension par
-                tension, dans un dialogue constant avec votre
-                corps.</p>
-            <a href="#soins">Réserver</a>
-        </div>
-        <div class="soins">
-            <img class="soins_img" src="./asset/stone_massage.jpg" alt="">
-            <h3>Pierres chaudes<span class="soins_price"></span></h3>
-            <p>La chaleur des pierres volcaniques libère les
-                tensions musculaires les plus profondes.</p>
-            <a href="#soins">Réserver</a>
-        </div>
-        <div class="soins">
-            <img class="soins_img" src="./asset/toa-heftiba-a9pFSC8dTlo-unsplash.jpg" alt="">
-            <h3>
-                <span>Head Spa <span class="soins_badge">Nouveau</span></span>
-                <span class="soins_price"></span>
-            </h3>
-
-            <p>Rituel japonais de soin profond du cuir chevelu.
-                Relaxation totale, corps et esprit.</p>
-            <a href="#soins">Réserver</a>
-        </div>
-        <div class="soins">
-            <img class="soins_img" src="./asset/foot-massage.jpg" alt="">
-            <h3>Drainage et Silhouette<span class="soins_price"></span></h3>
-            <p>Techniques de drainage lymphatique pour révéler
-                la légèreté naturelle de votre corps.</p>
-            <a href="#soins">Réserver</a>
+        <div>
+            <div class="soins">
+                <img class="soins_img" src="./asset/katherine-hanlon-83RTpUBjyYY-unsplash.jpg" alt="">
+                <div class="flex">
+                    <h3>
+                        <span>Head Spa <span class="soins_badge">Nouveau</span></span>
+                        <span class="soins_price"></span>
+                    </h3>
+                    <p>Rituel japonais de soin profond du cuir chevelu.
+                        Relaxation totale, corps et esprit.</p>
+                    <a href="#soins">Réserver</a>
+                </div>
+            </div>
+            <div class="soins flex_reverse">
+                <img class=" soins_img" src="./asset/foot-massage.jpg" alt="">
+                <div class="flex">
+                    <h3>Drainage et Silhouette<span class="soins_price"></span></h3>
+                    <p>Techniques de drainage lymphatique pour révéler
+                        la légèreté naturelle de votre corps.</p>
+                    <a href="#soins">Réserver</a>
+                </div>
+            </div>
         </div>
         <button class="soins_header cta cta6">Voir tous les soins & réserver</button>
     </div>
 
+    <!-- Immersion -->
+
+    <div class="experience_box">
+        <h2>01</h2>
+        <div class="experience_texte">
+            <h3>Lumière tamisée</h3>
+            <p>Dès votre arrivée, l’atmosphère vous enveloppe. La lumière douce et chaude prépare votre corps à lâcher
+                prise.</p>
+        </div>
+    </div>
+    <div class="experience_box">
+        <h2>02</h2>
+        <div class="experience_texte">
+            <h3>Questionnaire personnalisé</h3>
+            <p>Allergènes, antécédents, zones de tension. Chaque séance commence par une écoute attentive et
+                bienveillante.
+            </p>
+        </div>
+    </div>
+    <div class="experience_box">
+        <h2>03</h2>
+        <div class="experience_texte">
+            <h3>Musique immersive</h3>
+            <p>Sons naturels et vibrations douces. La musique guide votre esprit vers une connexion émotionnelle
+                profonde.
+            </p>
+        </div>
+    </div>
+    <div class="experience_box">
+        <h2>04</h2>
+        <div class="experience_texte">
+            <h3>Boisson offerte</h3>
+            <p>En fin de séance, une boisson chaude vous est offerte. Un moment de retour à soi, en douceur et en
+                silence.
+            </p>
+        </div>
+    </div>
+    <div class="experience_box">
+        <h2>05</h2>
+        <div class="experience_texte">
+            <h3>Gant chaud de clôture</h3>
+            <p>Le rituel de fin. Un gant chaud parfumé pour sceller le bien-être de la séance et vous ancrer dans la
+                détente.</p>
+        </div>
+    </div>
+
     <!-- Section Horaires -->
-    <section class="horaires">
-        <h2>Horaires du salon</h2>
 
-        <div class="horaire-item">
-            <span class="jour">Lundi - Mardi</span>
-            <span class="heure">9:30 - 18:00</span>
-        </div>
+    <div class="nous_trouver">
+        <section class="localisation">
+            <div class="container-localisation">
 
-        <div class="horaire-item">
-            <span class="jour">Mercredi</span>
-            <span class="heure">9:30 - 12:00</span>
-        </div>
+                <div class="info-localisation">
+                    <h2>Nous trouver</h2>
+                    <p>
+                        Nous vous accueillons dans notre salon pour un moment
+                        de détente et de bien-être.
+                    </p>
 
-        <div class="horaire-item">
-            <span class="jour">Jeudi - Vendredi</span>
-            <span class="heure">9:30 - 18:00</span>
-        </div>
+                    <p class="adresse">
+                        Alsembergsesteenweg 842<br>
+                        1180 Bruxelles, Belgique
+                    </p>
 
-        <div class="horaire-item">
-            <span class="jour">Samedi</span>
-            <span class="heure">11:30 - 15:00</span>
-        </div>
+                    <p>
+                        1er étage · Premier escalier à droite
+                        Parking accessible · Accueil avec secrétariat
+                    </p>
 
-        <div class="horaire-item">
-            <span class="jour">Dimanche</span>
-            <span class="heure">Fermé</span>
-        </div>
-    </section>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=Alsembergsesteenweg+842+1180+Brussel+België"
+                        target="_blank" class="btn-itineraire">
+                        Voir l’itinéraire
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="horaires">
+            <h2>Horaires du salon</h2>
+
+            <div class="horaire-item">
+                <span class="jour">Lundi - Mardi</span>
+                <span class="heure">9:30 - 18:00</span>
+            </div>
+
+            <div class="horaire-item">
+                <span class="jour">Mercredi</span>
+                <span class="heure">9:30 - 12:00</span>
+            </div>
+
+            <div class="horaire-item">
+                <span class="jour">Jeudi - Vendredi</span>
+                <span class="heure">9:30 - 18:00</span>
+            </div>
+
+            <div class="horaire-item">
+                <span class="jour">Samedi</span>
+                <span class="heure">11:30 - 15:00</span>
+            </div>
+
+            <div class="horaire-item">
+                <span class="jour">Dimanche</span>
+                <span class="heure">Fermé</span>
+            </div>
+        </section>
+    </div>
+
 
 
     <!-- Section Location -->
 
-    <section class="localisation">
-        <div class="container-localisation">
 
-            <div class="info-localisation">
-                <h2>Nous trouver</h2>
-                <p>
-                    Nous vous accueillons dans notre salon pour un moment
-                    de détente et de bien-être.
-                </p>
 
-                <p class="adresse">
-                    Alsembergsesteenweg 842<br>
-                    1180 Bruxelles, Belgique
-                </p>
+    <!-- Reviews Carousel -->
 
-                <a href="https://www.google.com/maps/dir/?api=1&destination=Alsembergsesteenweg+842+1180+Brussel+België"
-                    target="_blank" class="btn-itineraire">
-                    Voir l’itinéraire
-                </a>
+    <section class="reviews">
+
+        <h2>
+            <span class="stars">★★★★★</span>
+            4.9/5 • 15 avis vérifiés
+        </h2>
+
+        <div class="carousel">
+
+            <button class="prev">❮</button>
+
+            <div class="carousel-container">
+
+                <div class="carousel-track">
+
+                    <div class="review-card">
+                        <p>« Une parenthèse de calme absolu. Jamais je n’avais autant ressenti la détente dans chaque
+                            muscle
+                            de mon corps. »</p>
+                        <span>Marie L. · Uccle</span>
+                    </div>
+
+                    <div class="review-card">
+                        <p>« Le massage aux pierres chaudes était une révélation. L'accueil, la musique, l'attention
+                            portée
+                            — tout était parfait. »</p>
+                        <span>Sophie D. · Bruxelles</span>
+                    </div>
+
+                    <div class="review-card">
+                        <p>« Je recommande Be Chill à tous ceux qui cherchent un vrai soin. C’est une expérience
+                            complète,
+                            pas juste un massage. »</p>
+                        <span>Caroline M. · Forest</span>
+                    </div>
+                </div>
             </div>
 
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps?q=Alsembergsesteenweg+842+1180+Brussel+België&output=embed"
-                    width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy">
-                </iframe>
-            </div>
-
+            <button class="next">❯</button>
         </div>
     </section>
+
+    <!-- Footer -->
+
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/bechill.massages/" target="_blank" aria-label="Instagram">
+                <img src="../assets/instagram.svg" alt="Instagram" width="32" height="32">
+            </a>
+            <a href="https://www.facebook.com/Bechill.massages/" target="_blank" aria-label="Facebook">
+                <img src="../assets/facebook.svg" alt="Facebook" width="32" height="32">
+            </a>
+            <a href="https://www.tiktok.com/@bechill.massages" target="_blank" aria-label="TikTok">
+                <img src="../assets/tiktok.svg" alt="TikTok" width="32" height="32">
+            </a>
+            <a href="https://salonkee.be/salon/be-chill" target="_blank" aria-label="Salonkee">
+                <img src="../assets/salonkee.svg" alt="Salonkee" width="32" height="32">
+            </a>
+        </div>
+        <p>&copy; 2026 Bechill Massages</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
