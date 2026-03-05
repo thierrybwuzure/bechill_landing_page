@@ -553,7 +553,7 @@ hr {
     width: 50%;
     flex: 1;
     margin: 0 auto;
-    background-color: #f5f3f0;
+    background-color: #4A241D;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
 }
@@ -587,7 +587,7 @@ hr {
 
 .nous_trouver {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -596,7 +596,8 @@ hr {
 
 .localisation {
     padding: 60px 20px;
-    background-color: #f5f3f0;
+    color: #f5f3f0;
+    background-color: #4A241D;
 }
 
 .container-localisation {
@@ -610,28 +611,35 @@ hr {
 }
 
 .info-localisation {
-    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     min-width: 300px;
 }
 
-.map-container {
-    flex: 1;
+.map-container {}
+
+/* .map-container {
+
+    /* flex: 1;
     min-width: 300px;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
-
+*/
 .adresse {
     margin-top: 20px;
     font-weight: 600;
 }
 
 .btn-itineraire {
+    text-align: center;
+    width: 200px;
     position: relative;
-    display: inline-block;
+    display: block;
     padding: 14px 30px;
-    margin-top: 20px;
+    margin: 20px auto 0;
     color: white;
     text-decoration: none;
     border-radius: 30px;
@@ -641,20 +649,7 @@ hr {
     transition: transform 0.3s ease;
 }
 
-/* bande lumineuse */
-.btn-itineraire::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -75%;
-    width: 50%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.4);
-    transform: skewX(-25deg);
-    transition: left 0.6s ease;
-}
-
-.btn-itineraire:hover::before {
+*/ .btn-itineraire:hover::before {
     left: 130%;
 }
 
@@ -746,13 +741,18 @@ body {
     margin: 0;
 }
 
+/* Reviews */
+
 .reviews {
     padding: 60px 20px;
 }
 
 .reviews h2 {
     text-align: center;
+    font-family: 'Playfair Display';
 }
+
+/* Reviews Stars */
 
 .stars {
     color: #c8a96a;
@@ -769,7 +769,7 @@ body {
 }
 
 .carousel-container {
-    width: 500px;
+    width: 700px;
     overflow: hidden;
 }
 
@@ -779,6 +779,7 @@ body {
 }
 
 .review-card {
+    height: 250px;
     flex: 0 0 100%;
     box-sizing: border-box;
     background: white;
@@ -788,13 +789,17 @@ body {
 }
 
 .review-card p {
+    font-family: 'DM Sans';
     font-style: italic;
+    font-size: 1.3rem;
+    /* margin-top: 50px; */
     margin-bottom: 15px;
 }
 
 .review-card span {
     color: #666;
     font-size: 14px;
+    font-family: 'Playfair display';
 }
 
 button {
@@ -809,6 +814,86 @@ button {
 
 button:hover {
     background: #b39357;
+}
+
+/* / Contact Section */
+.contact-section {
+    background: #8A7A6A;
+    padding: 2.5em 1em 2em 1em;
+    border-radius: 0;
+    max-width: 600px;
+    margin: 0 auto 3em auto;
+}
+
+.contact-section small {
+    color: #FFD074;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1em;
+}
+
+.contact-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 400;
+    margin: 0 0 0.2em 0;
+    color: #222;
+}
+
+.contact-section h2 span {
+    color: #FFD074;
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+}
+
+.contact-form {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 90%;
+    max-width: 480px;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 0;
+    font-family: 'DM Sans', sans-serif;
+    background: #fff;
+    color: #222;
+}
+
+.contact-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.contact-form button {
+    width: 100%;
+    background: #4A241D;
+    color: #fff;
+    padding: 1rem 0;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+    letter-spacing: 1px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.contact-form button:hover {
+    background: #FFD074;
+    color: #4A241D;
 }
 
 /* Responsive */
