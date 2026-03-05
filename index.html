@@ -15,18 +15,20 @@
             <div class="header_aside header_aside-left">
 
                 <!-- Burger -->
-                <div class="header_burger-btn" id="burgerBtn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
+                <div class="header_burger-btn" id="burgerBtn" aria-label="Ouvrir le menu" aria-controls="burgerMenu"
+                    aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24"
+                        aria-hidden="true">
                         <path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"
                             stroke-width="2.5" d="M3 6h18M3 12h18M3 18h18" />
                     </svg>
                 </div>
-                <nav class="burger-menu" id="burgerMenu">
+                <nav class="burger-menu" id="burgerMenu" aria-label="Navigation principale">
                     <ul>
                         <li><a href="#top">Accueil</a></li>
                         <li><a href="#soins_header">Services</a></li>
                         <!-- <li><a href="#tarifs">Tarifs</a></li> -->
-                        <li><a href="#immersion_header">Formations</a>
+                        <li><a href="#formation">Formations</a>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
@@ -43,7 +45,7 @@
     <!-- Section 1 - Hero -->
 
     <div id="top" class="hero-container">
-        <video class="hero-video" autoplay muted loop playsinline>
+        <video class="hero-video" autoplay muted loop playsinline aria-hidden="true">
             <source src="./asset/professional-masseuse-gently-applying-pressure-to-2026-01-21-16-33-57-utc.mp4"
                 type="video/mp4">
         </video>
@@ -184,7 +186,7 @@
     </div>
 
     <!-- SECTION FORMATION / SAVOIR-FAIRE -->
-    <section class="formation-hero">
+    <section id="formation" class="formation-hero">
 
         <div class="hero-overlay">
 
@@ -302,13 +304,13 @@
 
     <!-- Reviews Carousel -->
 
-    <section class="reviews">
+    <section class="reviews" aria-label="Avis clients">
 
 
 
         <div class="carousel">
 
-            <button class="prev">❮</button>
+            <button class="prev" aria-label="Avis précédent">❮</button>
 
             <div class="carousel-container">
 
@@ -337,7 +339,7 @@
                 </div>
             </div>
 
-            <button class="next">❯</button>
+            <button class="next" aria-label="Avis suivant">❯</button>
         </div>
 
         <h2>
@@ -355,11 +357,11 @@
                 style="color:#FFD074;font-style:italic;font-family:'Playfair Display',serif;font: weight 100px;;">ensemble</span>
         </h2>
         <form class="contact-form" style="margin-top:2rem;">
-            <input type="text" placeholder="Votre prénom" required
+            <input type="text" placeholder="Votre prénom" aria-label="Votre prénom" required
                 style="width:100%;padding:1rem;font-size:1.1rem;border-radius:5px;border:none;margin-bottom:1.2rem;">
-            <input type="text" placeholder="votre@email.com ou 04XX XX XX XX" required
+            <input type="text" placeholder="votre@email.com ou 04XX XX XX XX" aria-label="Email ou téléphone" required
                 style="width:100%;padding:1rem;font-size:1.1rem;border-radius:5px;border:none;margin-bottom:1.5rem;">
-            <textarea placeholder="Votre message, votre question..." required
+            <textarea placeholder="Votre message, votre question..." aria-label="Votre message" required
                 style="width:100%;padding:1rem;font-size:1.1rem;border-radius:5px;border:none;margin-bottom:1.5rem;height:120px;"></textarea>
             <button type="submit"
                 style="width:100%;background:#4A241D;color:#fff;padding:1rem 0;font-size:1.1rem;border:none;border-radius:5px;margin-top:1rem;letter-spacing:1px;">ENVOYER
