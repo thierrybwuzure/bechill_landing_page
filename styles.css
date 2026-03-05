@@ -237,7 +237,7 @@ header {
 .hero-p1 {
     width: 85%;
     color: var(--white-color-primary);
-    font-family: 'Playfair Display';
+    font-family: 'Playfair Display', serif;
     font-size: 2.8rem;
     text-align: center;
 }
@@ -270,6 +270,7 @@ header {
     border: none;
     background-color: #2C2822;
     color: #FAF8F3;
+    text-decoration: none;
 }
 
 .cta1 {
@@ -332,7 +333,7 @@ header {
     background-color: #FAF8F3;
     padding: 24px;
     text-align: center;
-    height: 40vh;
+    height: 70vh;
 }
 
 .philo_container small,
@@ -342,7 +343,7 @@ p {
 }
 
 .philo_container h2 {
-    font-family: 'Playfair Display';
+    font-family: 'Playfair Display', serif;
     font-size: 2.2rem;
     font-weight: 300;
 }
@@ -396,7 +397,7 @@ p {
 
 .soins_header h2 {
     width: 280px;
-    font-family: 'Playfair Display';
+    font-family: 'Playfair Display', serif;
     font-size: 52px;
     font-weight: 300;
     line-height: 50px;
@@ -418,7 +419,7 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    font-family: 'Playfair Display';
+    font-family: 'Playfair Display', serif;
     font-weight: 100;
     font-size: 1.4rem;
     color: whitesmoke;
@@ -484,7 +485,7 @@ p {
 }
 
 .immersion_header h2 {
-    font-family: 'Playfair Display';
+    font-family: 'Playfair Display', serif;
     font-size: 52px;
     font-weight: 300;
     line-height: 55px;
@@ -502,7 +503,6 @@ p {
     justify-content: center;
     gap: 24px;
     background-color: #fff;
-    padding: 25px;
     margin-bottom: 1px solid gray;
 }
 
@@ -547,15 +547,87 @@ hr {
     margin-bottom: 20px;
 }
 
+/SECTION FORMATION / SAVOIR-FAIRE/ body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.formation-hero {
+    height: 520px;
+    background-image: url("asset/formation\ 1.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.35);
+    padding: 60px;
+    border-radius: 10px;
+}
+
+.hero-tag {
+    letter-spacing: 2px;
+    font-size: 13px;
+    margin-bottom: 15px;
+    color: #e0b96a;
+}
+
+.hero-title {
+    font-size: 48px;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.hero-title span {
+    color: #e0b96a;
+    font-style: italic;
+}
+
+.hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.badge {
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 12px 28px;
+    border: 1px solid white;
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
 /* Horaires */
 
 .horaires {
-    width: 50%;
+    width: 100%;
     flex: 1;
-    margin: 0 auto;
     background-color: #4A241D;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    color: whitesmoke;
+}
+
+.horaires small {
+    display: block;
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin-left: 25px;
+    color: #FFD074;
 }
 
 .horaires h2 {
@@ -567,7 +639,7 @@ hr {
 .horaire-item {
     display: flex;
     justify-content: space-between;
-    padding: 10px 0;
+    padding: 25px;
     border-bottom: 1px solid #ddd;
 }
 
@@ -580,7 +652,11 @@ hr {
 }
 
 .heure {
-    color: #555;
+    color: whitesmoke;
+}
+
+.dimanche {
+    color: lightgray;
 }
 
 /* Nous trouver */
@@ -590,6 +666,39 @@ hr {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: #4A241D;
+}
+
+.nous_header {
+    background-color: #4a231b;
+    width: 100%;
+    text-align: left;
+}
+
+.nous_header small {
+    display: block;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: #FFD074;
+}
+
+.nous_header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    font-weight: 300;
+    line-height: 55px;
+    margin-top: 12px;
+}
+
+.nous_header span {
+    color: #FFD074;
+}
+
+.btn {
+    width: 200px;
+    background: transparent;
+    border: 1px solid whitesmoke;
+    margin-top: 25px;
 }
 
 /* Location */
@@ -601,11 +710,11 @@ hr {
 }
 
 .container-localisation {
+    width: 100%;
     display: flex;
     gap: 50px;
     align-items: center;
     justify-content: center;
-    max-width: 500px;
     margin: 0 auto;
     flex-wrap: wrap;
 }
@@ -615,6 +724,7 @@ hr {
     flex-direction: column;
     justify-content: flex-start;
     min-width: 300px;
+    font-family: 'DM Sans', serif;
 }
 
 .map-container {}
@@ -630,7 +740,7 @@ hr {
 */
 .adresse {
     margin-top: 20px;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 .btn-itineraire {
@@ -641,7 +751,6 @@ hr {
     padding: 14px 30px;
     margin: 20px auto 0;
     color: white;
-    text-decoration: none;
     border-radius: 30px;
     background: #60561d;
     font-weight: 600;
@@ -749,7 +858,7 @@ body {
 
 .reviews h2 {
     text-align: center;
-    font-family: 'Playfair Display';
+    font-family: 'Playfair Display', serif;
 }
 
 /* Reviews Stars */
@@ -822,7 +931,7 @@ button:hover {
     padding: 2.5em 1em 2em 1em;
     border-radius: 0;
     max-width: 600px;
-    margin: 0 auto 3em auto;
+    margin: 0 auto;
 }
 
 .contact-section small {
@@ -896,9 +1005,97 @@ button:hover {
     color: #4A241D;
 }
 
+/* FAQ */
+
+.faq-section {
+    max-width: 900px;
+    margin: 3em auto;
+}
+
+.faq-section small {
+    color: #FFD074;
+    letter-spacing: 1px;
+}
+
+.faq-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+.faq-section h2 span {
+    color: #FFD074;
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+}
+
+.faq-list {
+    margin-top: 2em;
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #b3a9a3;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+}
+
+.faq-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2em 2em;
+    border-bottom: 1px solid #b3a9a3;
+    font-size: 1.2em;
+    font-family: 'Playfair Display', serif;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-item span:last-child {
+    color: #FFD074;
+    font-size: 2em;
+    font-weight: 300;
+}
+
 /* Responsive */
 
 @media (min-width: 768px) {
+
+    /* Immersion */
+
+    .immersion_container {
+        background-color: #fff;
+    }
+
+    .immersion_box {
+        max-width: 800px;
+        margin: 0;
+        text-align: left;
+    }
+
+    /* Nous trouver */
+
+    .nous_trouver {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .container-localisation {
+        flex: 1;
+    }
+
+    .horaires {
+        width: 35%;
+        flex: none;
+        font-weight: 200;
+    }
+
+    .horaire-item {
+        flex: none;
+    }
 
     /* Header */
 
@@ -970,7 +1167,7 @@ button:hover {
     }
 
     .philo_container {
-        height: 65vh;
+        height: 80vh;
     }
 
     .philo_container h2 {
@@ -981,4 +1178,6 @@ button:hover {
         width: 45%;
         font-size: 1.5rem;
     }
+
+
 }
