@@ -306,7 +306,7 @@ header {
 }
 
 .philo_container small,
-p {
+.philo_container p {
     font-family: 'DM Sans';
     font-size: 1rem;
 }
@@ -680,7 +680,7 @@ hr {
     flex-direction: column;
     justify-content: flex-start;
     min-width: 300px;
-    font-family: 'DM Sans', serif;
+    font-family: 'DM Sans', sans-serif;
 }
 
 .adresse {
@@ -821,14 +821,13 @@ footer p {
     font-family: 'DM Sans';
     font-style: italic;
     font-size: 1.3rem;
-    /* margin-top: 50px; */
     margin-bottom: 15px;
 }
 
 .review-card span {
     color: #666;
     font-size: 14px;
-    font-family: 'Playfair display';
+    font-family: 'Playfair Display', serif;
 }
 
 button {
@@ -845,11 +844,10 @@ button:hover {
     background: #b39357;
 }
 
-/* / Contact Section */
+/* Contact Section */
 .contact-section {
     background: #8A7A6A;
     padding: 2.5em 1em 2em 1em;
-    border-radius: 0;
     max-width: 600px;
     margin: 0 auto;
 }
