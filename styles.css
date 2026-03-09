@@ -725,7 +725,7 @@ hr {
 
 .info-localisation {
     display: flex;
-    flex-direction: column;
+    flex-git pushdirection: column;
     justify-content: flex-start;
     min-width: 300px;
     font-family: 'DM Sans', serif;
@@ -813,7 +813,6 @@ hr {
     margin-top: 3em;
 }
 
-/* Positionnement des icônes dans le footer */
 .social-icons-layout {
     display: flex;
     justify-content: center;
