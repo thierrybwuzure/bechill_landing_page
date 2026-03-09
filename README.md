@@ -5,6 +5,8 @@
 
 **Live site:** https://thierrybwuzure.github.io/bechill_landing_page/
 
+![Be Chill preview](https://github.com/user-attachments/assets/dc11ed40-5faf-4ddf-9011-1f17fc8fc047)
+
 Landing page for **Be Chill Massages**, a massage and well-being salon located in Uccle, Brussels, Belgium.
 
 Built during a **hackathon at EFP (École de Formation des Professions)** by a cross-disciplinary team of 7 designers and 3 developers working together.
