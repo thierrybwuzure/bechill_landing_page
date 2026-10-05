@@ -318,11 +318,9 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     background-color: #FAF8F3;
-    padding: 24px;
+    padding: 3.5rem 1.5rem;
     text-align: center;
-    height: 70vh;
 }
 
 .philo_container small,
@@ -335,6 +333,7 @@ header {
     font-family: 'Playfair Display', serif;
     font-size: 2.2rem;
     font-weight: 300;
+    margin: 1rem 0 1.45rem;
 }
 
 .philo_h2-span {
@@ -342,12 +341,17 @@ header {
 }
 
 .philo_container small {
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.7;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     color: #C9A84C;
 }
 
 .philo_container p {
     width: 80%;
+    margin: 0;
     font-size: 1.2rem;
     font-weight: 300;
     color: #8A7A6A;
@@ -355,7 +359,7 @@ header {
 }
 
 .star_icon {
-    margin-top: 25px;
+    margin-top: 2rem;
 }
 
 /* Nos Soins */
@@ -1244,16 +1248,18 @@ h2.section_title {
     }
 
     .philo_container {
-        height: 80vh;
+        padding-block: 6rem 7.5rem;
     }
 
     .philo_container h2 {
-        font-size: 4rem;
+        font-size: 3.75rem;
+        line-height: 5.5rem;
     }
 
     .philo_container p {
-        width: 45%;
-        font-size: 1.5rem;
+        width: 602px;
+        font-size: 1.25rem;
+        line-height: 1.65;
     }
 
 
