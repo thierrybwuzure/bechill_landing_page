@@ -34,6 +34,9 @@ body {
     --accent-color-yellow: #fc0;
     --text-color-light: #faf8f3;
 
+    /* Proportions */
+    --golden-ratio: 1.618;
+
 }
 
 /* Header */
@@ -391,6 +394,10 @@ header {
 
 .soins_img_massage {
     aspect-ratio: 74 / 31;
+}
+
+.soins picture {
+    display: contents;
 }
 
 .soins h3 {
@@ -1179,7 +1186,7 @@ h2.section_title {
 
     .soins h3 {
         color: black;
-        padding: 20px;
+        padding: 0 20px 20px;
         font-size: 1.6rem;
         margin-left: 40px;
     }
@@ -1208,11 +1215,28 @@ h2.section_title {
         height: 400px;
     }
 
+    .soins img.soins_img_landscape {
+        height: auto;
+        aspect-ratio: 4 / 3;
+    }
+
     .flex {
         flex: 1;
         display: flex;
         flex-direction: column;
         padding: 0;
+    }
+
+    /* Golden ratio: free space above the text : below = 1 : 1.618 */
+
+    .flex::before,
+    .flex::after {
+        content: "";
+        flex: 1 1 0;
+    }
+
+    .flex::after {
+        flex-grow: var(--golden-ratio);
     }
 
     .flex_reverse {
