@@ -408,6 +408,10 @@ header {
     object-fit: cover;
 }
 
+.soins_img_massage {
+    aspect-ratio: 74 / 31;
+}
+
 .soins h3 {
     margin: 0;
     font-family: 'Playfair Display', serif;
