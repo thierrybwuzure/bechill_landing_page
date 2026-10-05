@@ -6,6 +6,12 @@ html {
     scroll-behavior: smooth;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: 'DM Sans', Arial, sans-serif;
@@ -243,6 +249,10 @@ header {
 }
 
 .cta1 {
+    display: inline-block;
+    max-width: 100%;
+    text-decoration: none;
+    cursor: pointer;
     width: 273px;
     text-align: center;
     padding: 24px;
@@ -254,6 +264,10 @@ header {
     background-color: #2C2822;
     color: #FAF8F3;
     margin-top: 50px;
+}
+
+.cta1:hover {
+    background-color: #b39357;
 }
 
 .cta2 {
@@ -365,7 +379,7 @@ header {
 }
 
 .soins_header h2 {
-    width: 280px;
+    width: 330px;
     font-family: 'Playfair Display', serif;
     font-size: 52px;
     font-weight: 300;
@@ -531,7 +545,8 @@ hr {
 
 .hero-overlay {
     background: rgba(0, 0, 0, 0.35);
-    padding: 60px;
+    padding: 40px 20px;
+    max-width: calc(100% - 32px);
     border-radius: 10px;
 }
 
@@ -750,7 +765,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10rem;
+    gap: min(10rem, 15vw);
 }
 
 .social-icons img {
@@ -780,12 +795,13 @@ footer p {
 
 /* Carousel */
 
-
 /* Reviews */
 
 .reviews h2 {
+    height: 70px;
     text-align: center;
     font-family: 'Playfair Display', serif;
+    margin: 0;
     background-color: #fff;
 }
 
@@ -817,8 +833,10 @@ sup {
 }
 
 .carousel-container {
-    height: 50vh;
-    width: 700px;
+    height: 40vh;
+    flex: 1;
+    min-width: 0;
+    max-width: 700px;
     overflow: hidden;
 }
 
@@ -842,13 +860,15 @@ sup {
     font-style: italic;
     font-size: 1.3rem;
     margin-bottom: 15px;
-    width: 360px;
+    width: 100%;
+    max-width: 360px;
     margin: 25px auto;
 }
 
 .review-card span {
     display: block;
-    width: 360px;
+    width: 100%;
+    max-width: 360px;
     margin: 0 auto;
     color: #777;
     font-size: 14px;
@@ -870,11 +890,15 @@ button:hover {
 }
 
 /* Contact Section */
+
+#contact {
+    background-color: #8A7A6A;
+}
+
 .contact-section {
+    width: 100%;
     background: #8A7A6A;
     padding: 2.5em 1em 2em 1em;
-    max-width: 600px;
-    margin: 0 auto;
 }
 
 .contact-section small {
@@ -1006,6 +1030,10 @@ button:hover {
 /* Responsive */
 
 @media (min-width: 768px) {
+
+    .hero-overlay {
+        padding: 60px;
+    }
 
     /* Immersion */
 
