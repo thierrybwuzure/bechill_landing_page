@@ -373,27 +373,8 @@ header {
 }
 
 #soins_header {
-    padding: 1.1rem 1.3rem 2.3rem;
+    padding: 1.1rem 0 2.3rem;
     background-color: var(--card-color-primary);
-}
-
-.soins_header small {
-    display: block;
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    color: var(--light-color-secondary);
-}
-
-.soins_header h2 {
-    width: 11.2rem;
-    margin: 0.4rem 0 0;
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    font-weight: 400;
-    line-height: 1.15;
-    text-align: center;
 }
 
 .soins_header span {
@@ -471,7 +452,7 @@ header {
 
 .immersion_header {
     background-color: #fff;
-    padding: 25px 0 16px 50px;
+    padding: 25px 0 16px;
 }
 
 .immersion_header small {
@@ -667,8 +648,10 @@ hr {
 }
 
 .nous_header {
-    background-color: #4a231b;
+    background-color: #4A241D;
+    color: #f5f3f0;
     width: 100%;
+    padding: 60px 0 0;
     text-align: left;
 }
 
@@ -702,8 +685,15 @@ hr {
 
 /* Location */
 
+.localisation > small {
+    display: block;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: var(--light-color-secondary);
+}
+
 .localisation {
-    padding: 60px 20px;
+    padding: 0 1.5rem 60px;
     color: #f5f3f0;
     background-color: #4A241D;
 }
@@ -915,7 +905,7 @@ button:hover {
 .contact-section {
     width: 100%;
     background: #8A7A6A;
-    padding: 2.5em 1em 2em 1em;
+    padding: 2.5em 0 2em;
 }
 
 .contact-section small {
@@ -942,7 +932,8 @@ button:hover {
 }
 
 .contact-form {
-    margin-top: 2rem;
+    width: min(1112px, 100% - 3rem);
+    margin: 2rem auto 0;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -1016,7 +1007,8 @@ button:hover {
 }
 
 .faq-list {
-    margin-top: 2em;
+    width: min(1112px, 100% - 3rem);
+    margin: 2em auto 0;
     background: #fff;
     border-radius: 10px;
     border: 1px solid #b3a9a3;
@@ -1044,6 +1036,35 @@ button:hover {
     font-weight: 300;
 }
 
+/* Section headers */
+
+small.section_label,
+h2.section_title {
+    width: min(1112px, 100% - 3rem);
+    margin-inline: auto;
+    text-align: left;
+}
+
+small.section_label {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.7;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--light-color-secondary);
+}
+
+h2.section_title {
+    margin-top: 0.95rem;
+    margin-bottom: 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.15;
+}
+
 /* Responsive */
 
 @media (min-width: 768px) {
@@ -1058,20 +1079,45 @@ button:hover {
         background-color: #fff;
     }
 
-    .immersion_header {
-        margin-left: 100px;
-    }
-
     .immersion_box {
         max-width: 800px;
         margin-left: 100px;
         text-align: left;
     }
 
+    /* Section headers */
+
+    h2.section_title {
+        font-size: 3.25rem;
+    }
+
+    #soins_header,
+    .immersion_header,
+    .nous_header {
+        padding: 60px 0 43px;
+        margin-left: 0;
+        background-color: transparent;
+    }
+
+    .nous_header {
+        flex: 0 0 100%;
+    }
+
+    .faq-section {
+        max-width: none;
+        margin: 0;
+        padding: 60px 0;
+    }
+
+    .contact-section {
+        padding-top: 60px;
+    }
+
     /* Nous trouver */
 
     .nous_trouver {
         flex-direction: row;
+        flex-wrap: wrap;
         align-items: center;
     }
 
