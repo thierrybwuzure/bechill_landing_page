@@ -1079,9 +1079,13 @@ h2.section_title {
         background-color: #fff;
     }
 
+    .immersion_box,
+    hr {
+        max-width: 680px;
+        margin-left: max(1.5rem, calc((100% - 1112px) / 2));
+    }
+
     .immersion_box {
-        max-width: 800px;
-        margin-left: 100px;
         text-align: left;
     }
 
@@ -1119,10 +1123,22 @@ h2.section_title {
         flex-direction: row;
         flex-wrap: wrap;
         align-items: center;
+        padding-inline: max(1.5rem, calc((100% - 1112px) / 2));
+    }
+
+    .nous_header small.section_label,
+    .nous_header h2.section_title {
+        width: 100%;
+    }
+
+    .localisation {
+        flex: 1;
+        padding-inline: 0;
     }
 
     .container-localisation {
         flex: 1;
+        justify-content: flex-start;
     }
 
     .horaires {
