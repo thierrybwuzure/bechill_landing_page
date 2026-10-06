@@ -821,11 +821,20 @@ hr {
 /* Horaires */
 
 .horaires {
-    width: 100%;
+    width: calc(100% - 3rem);
     flex: 1;
-    padding-inline: 1.5rem;
-    background-color: var(--card-color-primary);
+    margin-bottom: 60px;
+    padding: 0;
     color: whitesmoke;
+}
+
+.localisation_map {
+    display: block;
+    width: 100%;
+    height: 220px;
+    margin-top: 1.5rem;
+    border: 0;
+    border-radius: 8px;
 }
 
 .horaires small {
@@ -951,7 +960,7 @@ hr {
 }
 
 .localisation {
-    padding: 0 1.5rem 60px;
+    padding: 0 1.5rem 2.5rem;
     color: #f5f3f0;
     background-color: var(--card-color-primary);
 }
@@ -976,7 +985,50 @@ hr {
 
 .adresse {
     margin-top: 20px;
+    margin-bottom: 0;
     font-weight: 400;
+}
+
+/* Details line right under the address, in a softer tone */
+
+.adresse + p {
+    margin-top: 0.3rem;
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.55;
+    color: rgba(245, 243, 240, 0.7);
+}
+
+.adresse a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.adresse a:hover {
+    text-decoration: underline;
+}
+
+/* Button as in the desktop frame: about 140 x 42px, 12px uppercase text */
+
+.info-localisation .btn {
+    align-self: flex-start;
+    width: auto;
+    margin-top: 1.5rem;
+    padding: 0.7rem 1.25rem;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    letter-spacing: 0.1em;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Same hover as the contact form button: brand yellow fill, dark brown text */
+
+.info-localisation .btn:hover,
+.info-localisation .btn:focus-visible {
+    background: var(--light-color-secondary);
+    border-color: var(--light-color-secondary);
+    color: #4A241D;
 }
 
 .btn-itineraire {
@@ -1516,11 +1568,18 @@ h2.section_title {
     /* Nous trouver */
 
     .nous_trouver {
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: flex-start;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto 1fr;
+        align-items: start;
         column-gap: 3rem;
-        padding-inline: max(1.5rem, calc((100% - 1112px) / 2));
+        padding-inline: calc(max(1.5rem, (100% - 1112px) / 2) + 3rem);
+        padding-bottom: 60px;
+    }
+
+    .nous_header {
+        grid-column: 1;
+        grid-row: 1;
     }
 
     .nous_header small.section_label,
@@ -1531,8 +1590,21 @@ h2.section_title {
     /* Two equal columns (532px each with the 48px gap), as in the desktop frame */
 
     .localisation {
-        flex: 1 1 0;
-        padding-inline: 0;
+        position: relative;
+        grid-column: 1;
+        grid-row: 2;
+        padding: 0;
+    }
+
+    /* A map next to the button and the phone number (about 64px from the button), as tall as that space (button top to phone bottom), 240px wide (148 x 1.618) */
+
+    .localisation_map {
+        position: absolute;
+        left: 13rem;
+        bottom: 0;
+        width: 240px;
+        height: 148px;
+        margin: 0;
     }
 
     .container-localisation {
@@ -1540,10 +1612,15 @@ h2.section_title {
         justify-content: flex-start;
     }
 
+    /* Hours: right column, centered vertically between the section label and the bottom of the address block */
+
     .horaires {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        align-self: center;
         width: auto;
-        flex: 1 1 0;
-        padding-inline: 0;
+        margin: 62px 0 0;
+        padding: 0;
         font-weight: 200;
     }
 
