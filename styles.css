@@ -181,6 +181,9 @@ header {
     gap: 18px;
     height: 100vh;
     background-color: #2c2822;
+    background-image: url("asset/hero-poster.jpg");
+    background-size: cover;
+    background-position: center;
     text-align: center;
     padding: 25px;
     overflow: hidden;
