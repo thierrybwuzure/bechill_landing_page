@@ -666,21 +666,38 @@ hr {
     margin-inline: auto;
 }
 
+.formation_students .section_label,
 .formation_students .section_title {
     width: auto;
-    margin: 0 0 1.5rem;
+    margin-inline: 0;
     text-align: center;
+}
+
+.formation_students .section_title {
+    margin-bottom: 2.5rem;
     color: var(--text-color-light);
 }
 
-/* Students photo: portrait (59 : 75, as in Version 3) on mobile, 4 : 3 crop on desktop. The gold frame of the Figma export is recreated with a border. */
+.formation_students .section_title span {
+    color: var(--light-color-secondary);
+}
+
+/* Texture of the students band: fine film grain plus a soft warm glow behind the title, both drawn in CSS (no image file) */
+
+.formation_band_students {
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+        radial-gradient(ellipse 60% 55% at 50% 0%, rgba(255, 208, 116, 0.16), transparent 70%),
+        radial-gradient(ellipse 90% 60% at 50% 110%, rgba(0, 0, 0, 0.18), transparent 70%);
+}
+
+/* Students photo: the whole picture at its natural portrait ratio (59 : 75), nothing cropped. Version 3's box looks landscape in its render, but the user chose to show the whole photo. The gold frame of the Figma export was dropped at the user's request. */
 
 .students_photo {
     display: block;
     width: 100%;
     height: auto;
-    border: 3px solid #C9A84C;
-    border-radius: 14px;
+    border-radius: 3px;
 }
 
 .formation_programme {
@@ -1357,11 +1374,11 @@ h2.section_title {
         margin: 0;
     }
 
+    /* The whole photo at its own 59 : 75 ratio, centered, 480px wide (about 610px tall) */
+
     .students_photo {
-        width: min(100%, calc(1112px / var(--golden-ratio)));
+        width: min(100%, 480px);
         margin-inline: auto;
-        aspect-ratio: 4 / 3;
-        object-fit: cover;
     }
 
     .programme_list li {
