@@ -47,6 +47,9 @@ body {
     /* Proportions */
     --golden-ratio: 1.618;
 
+    /* Light shadow shared by the photos of every section except the hero */
+    --shadow-photo: 0 8px 24px rgba(0, 0, 0, 0.14);
+
     /* Fonts: --font-heading is the one used by every heading; point it at any token below */
     --font-heading: var(--font-bodoni);
     --font-playfair: 'Playfair Display', serif;
@@ -426,6 +429,13 @@ header {
 
 .soins picture {
     display: contents;
+}
+
+.soins img,
+.formation_bio_photo,
+.students_photo,
+.contact_photo {
+    box-shadow: var(--shadow-photo);
 }
 
 .soins h3 {
