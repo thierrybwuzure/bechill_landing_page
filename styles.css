@@ -1280,6 +1280,17 @@ h2.section_title {
     line-height: 1.15;
 }
 
+/* Centered headers: Nos soins, Immersion and FAQ. Nous trouver, Contact and Son parcours stay left-aligned on the 1112px column. */
+
+.soins_header .section_label,
+.soins_header .section_title,
+.immersion_header .section_label,
+.immersion_header .section_title,
+.faq-section .section_label,
+.faq-section .section_title {
+    text-align: center;
+}
+
 /* Responsive */
 
 @media (min-width: 768px) {
@@ -1377,6 +1388,10 @@ h2.section_title {
         max-width: none;
         margin: 0;
         padding: 60px 0;
+    }
+
+    .faq-list {
+        width: min(800px, 100% - 3rem);
     }
 
     .contact-section {
