@@ -746,8 +746,6 @@ footer {
     color: #8A7A6A;
     padding: 1em 0 1em 0;
     text-align: center;
-    margin-top: 2em;
-
 }
 
 .icon svg {
@@ -903,7 +901,7 @@ button:hover {
 .contact-section {
     width: 100%;
     background: #8A7A6A;
-    padding: 2.5em 0 2em;
+    padding: 2.5em 0 3.5rem;
 }
 
 .contact-section small {
@@ -930,19 +928,23 @@ button:hover {
 }
 
 .contact-form {
-    width: min(1112px, 100% - 3rem);
-    margin: 2rem auto 0;
+    /* Form width = the 1112px column / golden ratio (687px) */
+    width: min(calc(1112px / var(--golden-ratio)), 100% - 3rem);
+    /* Left edge on the same line as the section headers */
+    margin: 2rem auto 0 max(1.5rem, calc((100% - 1112px) / 2));
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    align-items: center;
+    align-items: stretch;
 }
+
+/* Fields and button share one width and one height; the textarea is that height x golden ratio squared (52px -> 136px) */
 
 .contact-form input,
 .contact-form textarea {
-    width: 90%;
-    max-width: 480px;
-    padding: 1rem;
+    width: 100%;
+    height: 3.25rem;
+    padding: 0 1rem;
     font-size: 1.1rem;
     border-radius: 5px;
     border: none;
@@ -953,19 +955,21 @@ button:hover {
 }
 
 .contact-form textarea {
-    min-height: 120px;
+    height: auto;
+    min-height: calc(3.25rem * var(--golden-ratio) * var(--golden-ratio));
+    padding: 1rem;
     resize: vertical;
 }
 
 .contact-form button {
     width: 100%;
+    height: 3.25rem;
     background: #4A241D;
     color: #fff;
-    padding: 1rem 0;
+    padding: 0;
     font-size: 1.1rem;
     border: none;
     border-radius: 5px;
-    margin-top: 1rem;
     letter-spacing: 1px;
     font-family: 'DM Sans', sans-serif;
     font-weight: 400;
@@ -1112,7 +1116,7 @@ h2.section_title {
     }
 
     .contact-section {
-        padding-top: 60px;
+        padding-block: 60px 6rem;
     }
 
     /* Nous trouver */
