@@ -498,19 +498,19 @@ header {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 24px;
+    gap: 1rem;
+    width: min(680px, 100% - 3rem);
+    margin-inline: auto;
     background-color: #fff;
 }
 
 .immersion_num {
-    flex: 1;
+    flex: 0 0 3.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 70px;
-    height: 70px;
     border-radius: 8px;
-    font-size: 5rem;
+    font-size: 2.5rem;
     font-family: var(--font-heading);
     color: #FFD074;
     font-weight: 400;
@@ -520,12 +520,12 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 75%;
+    flex: 1;
 }
 
 hr {
-    max-width: 800px;
-    margin-left: 50px;
+    width: min(680px, 100% - 3rem);
+    margin-inline: auto;
     border: none;
     border-top: 1px solid #C9A84C;
 }
@@ -1356,14 +1356,21 @@ h2.section_title {
         background-color: #fff;
     }
 
-    .immersion_box,
-    hr {
-        max-width: 680px;
-        margin-left: max(1.5rem, calc((100% - 1112px) / 2));
+    .immersion_box {
+        gap: 24px;
+        text-align: left;
     }
 
-    .immersion_box {
-        text-align: left;
+    .immersion_num {
+        flex: 1;
+        width: 70px;
+        height: 70px;
+        font-size: 5rem;
+    }
+
+    .immersion_texte {
+        flex: none;
+        width: 75%;
     }
 
     /* Section headers */
