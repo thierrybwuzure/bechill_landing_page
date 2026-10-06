@@ -528,8 +528,11 @@ hr {
 /* Formation / Savoir-faire */
 
 .formation-hero {
-    height: 520px;
-    background-image: url("asset/formation\ 1.png");
+    min-height: 520px;
+    /* Text sits on the golden ratio: about 1 : 1.618 of the space above : below */
+    padding-block: 4.2rem 6.8rem;
+    /* Dark overlay over the whole photo (35%), then the photo */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("asset/formation\ 1.png");
     background-size: cover;
     background-position: center;
     display: flex;
@@ -540,8 +543,7 @@ hr {
 }
 
 .hero-overlay {
-    background: rgba(0, 0, 0, 0.35);
-    padding: 40px 20px;
+    padding: 0 20px;
     max-width: calc(100% - 32px);
     border-radius: 10px;
 }
@@ -549,6 +551,7 @@ hr {
 .hero-tag {
     letter-spacing: 2px;
     font-size: 13px;
+    margin-top: 0;
     margin-bottom: 15px;
     color: #e0b96a;
 }
@@ -1086,8 +1089,28 @@ h2.section_title {
 
 @media (min-width: 768px) {
 
+    /* Formation band: 567px on the 1440px desktop frame (39.4% of the width), so it grows on wider screens */
+
+    .formation-hero {
+        min-height: max(567px, 39.4vw);
+        flex-direction: column;
+        padding-block: 0;
+    }
+
+    /* The free space of the band is split 1 : 1.618 above : below the text */
+
+    .formation-hero::before,
+    .formation-hero::after {
+        content: "";
+        flex: 1 1 0;
+    }
+
+    .formation-hero::after {
+        flex-grow: var(--golden-ratio);
+    }
+
     .hero-overlay {
-        padding: 60px;
+        padding: 0 60px;
     }
 
     /* Immersion */
@@ -1271,6 +1294,24 @@ h2.section_title {
         font-size: 1.25rem;
         line-height: 1.65;
     }
+}
 
+/* Wide screens: scale the Formation text box with the band, to keep the desktop frame's proportions */
 
+@media (min-width: 1600px) {
+    .hero-overlay {
+        zoom: 1.1;
+    }
+}
+
+@media (min-width: 1920px) {
+    .hero-overlay {
+        zoom: 1.3;
+    }
+}
+
+@media (min-width: 2400px) {
+    .hero-overlay {
+        zoom: 1.6;
+    }
 }
