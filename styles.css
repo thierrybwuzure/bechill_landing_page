@@ -606,13 +606,51 @@ hr {
 /* Formation details */
 
 .formation-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding-block: 3.5rem;
     background-color: var(--text-color-light);
 }
 
-.formation_bio {
+.formation_bio,
+.formation_programme {
     width: min(1112px, 100% - 3rem);
     margin-inline: auto;
-    padding-block: 3.5rem;
+}
+
+.formation_programme {
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+    background-color: var(--card-color-primary);
+    color: var(--text-color-light);
+}
+
+.programme_list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.programme_list li {
+    display: flex;
+    align-items: baseline;
+    gap: 1.25rem;
+    padding: 1.1rem 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    border-bottom: 1px solid rgba(255, 208, 116, 0.35);
+}
+
+.programme_list li:last-child {
+    border-bottom: none;
+}
+
+.programme_num {
+    flex: 0 0 2rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    color: var(--light-color-secondary);
 }
 
 .formation_bio .section_title {
@@ -1155,10 +1193,25 @@ h2.section_title {
         padding: 0 60px;
     }
 
-    /* Formation details */
+    /* Formation details: bio and programme split the 1112px column on the golden ratio (1 : 1.618) */
 
-    .formation_bio {
+    .formation-details {
+        display: grid;
+        grid-template-columns: 1fr 1.618fr;
+        column-gap: 3rem;
+        align-items: start;
         padding-block: 60px 6rem;
+        padding-inline: max(1.5rem, calc((100% - 1112px) / 2));
+    }
+
+    .formation_bio,
+    .formation_programme {
+        width: auto;
+        margin: 0;
+    }
+
+    .programme_list li {
+        font-size: 1rem;
     }
 
     /* Immersion */
