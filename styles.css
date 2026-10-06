@@ -627,22 +627,14 @@ hr {
     text-align: center;
 }
 
-/* Placeholder until asset/formation-students.jpg is added (59 : 75 on mobile, as in Version 3) */
+/* Students photo: portrait (59 : 75, as in Version 3) on mobile, 4 : 3 crop on desktop. The gold frame of the Figma export is recreated with a border. */
 
-.students_placeholder {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    aspect-ratio: 59 / 75;
-    border: 1px dashed rgba(138, 122, 106, 0.6);
-    border-radius: 8px;
-    background-color: rgba(138, 122, 106, 0.1);
-    color: #8A7A6A;
-    font-size: 0.9rem;
-}
-
-.students_placeholder::after {
-    content: "Photo à venir";
+.students_photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 3px solid #C9A84C;
+    border-radius: 14px;
 }
 
 .formation_programme {
@@ -1312,8 +1304,11 @@ h2.section_title {
         grid-column: 1 / -1;
     }
 
-    .students_placeholder {
-        aspect-ratio: 16 / 7;
+    .students_photo {
+        width: min(100%, calc(1112px / var(--golden-ratio)));
+        margin-inline: auto;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
     }
 
     .programme_list li {
