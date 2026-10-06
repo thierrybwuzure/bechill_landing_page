@@ -181,7 +181,8 @@ header {
     gap: 18px;
     height: 100vh;
     background-color: #2c2822;
-    background-image: url("asset/hero-poster.jpg");
+    /* Dark overlay over the whole photo (40%, the photo is light), then the photo */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("asset/hero-poster.jpg");
     background-size: cover;
     background-position: center;
     text-align: center;
