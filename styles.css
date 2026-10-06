@@ -1,14 +1,14 @@
 @import url('https://fonts.cdnfonts.com/css/kiona');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 /* Heading font candidates. To switch, uncomment ONE line below and set --font-heading in :root to its token.
-   Each @import is render-blocking, so keep only the fonts in use (Playfair Display is the active one above).
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+   Each @import is render-blocking, so keep only the fonts in use (Bodoni Moda is the active one above).
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gloock&display=swap');
 */
 
@@ -48,7 +48,7 @@ body {
     --golden-ratio: 1.618;
 
     /* Fonts: --font-heading is the one used by every heading; point it at any token below */
-    --font-heading: var(--font-playfair);
+    --font-heading: var(--font-bodoni);
     --font-playfair: 'Playfair Display', serif;
     --font-cormorant: 'Cormorant Garamond', serif;
     --font-fraunces: 'Fraunces', serif;
