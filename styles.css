@@ -1140,15 +1140,23 @@ button:hover {
     font-weight: 400;
 }
 
-.contact-form {
-    /* Form width = the 1112px column / golden ratio (687px) */
-    width: min(calc(1112px / var(--golden-ratio)), 100% - 3rem);
-    /* Left edge on the same line as the section headers */
+/* Contact: the form and a photo share one row on the 1112px column, left edge on the same line as the headers.
+   The photo is desktop only (Version 3 has none on mobile). */
+
+.contact_layout {
+    width: min(1112px, 100% - 3rem);
     margin: 2rem auto 0 max(1.5rem, calc((100% - 1112px) / 2));
+}
+
+.contact-form {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     align-items: stretch;
+}
+
+.contact_photo {
+    display: none;
 }
 
 /* Fields and button share one width and one height; the textarea is that height x golden ratio squared (52px -> 136px) */
@@ -1403,6 +1411,30 @@ h2.section_title {
 
     .contact-section {
         padding-block: 60px 6rem;
+    }
+
+    /* Form and photo split the 1112px column on the golden ratio (1.618 : 1), same height */
+
+    .contact_layout {
+        display: grid;
+        grid-template-columns: 1.618fr 1fr;
+        column-gap: 3rem;
+        align-items: stretch;
+    }
+
+    .contact_photo {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        border-radius: 5px;
+    }
+
+    .contact_photo img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     /* Nous trouver */
