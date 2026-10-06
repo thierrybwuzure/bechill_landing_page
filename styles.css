@@ -615,9 +615,32 @@ hr {
 
 .formation_bio,
 .formation_programme,
-.formation_certificate {
+.formation_certificate,
+.formation_students {
     width: min(1112px, 100% - 3rem);
     margin-inline: auto;
+}
+
+.formation_students .section_title {
+    margin: 0 0 1.5rem;
+}
+
+/* Placeholder until asset/formation-students.jpg is added (59 : 75 on mobile, as in Version 3) */
+
+.students_placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 59 / 75;
+    border: 1px dashed rgba(138, 122, 106, 0.6);
+    border-radius: 8px;
+    background-color: rgba(138, 122, 106, 0.1);
+    color: #8A7A6A;
+    font-size: 0.9rem;
+}
+
+.students_placeholder::after {
+    content: "Photo à venir";
 }
 
 .formation_programme {
@@ -1267,7 +1290,8 @@ h2.section_title {
 
     .formation_bio,
     .formation_programme,
-    .formation_certificate {
+    .formation_certificate,
+    .formation_students {
         width: auto;
         margin: 0;
     }
@@ -1280,6 +1304,14 @@ h2.section_title {
     .formation_programme,
     .formation_certificate {
         grid-column: 2;
+    }
+
+    .formation_students {
+        grid-column: 1 / -1;
+    }
+
+    .students_placeholder {
+        aspect-ratio: 16 / 7;
     }
 
     .programme_list li {
