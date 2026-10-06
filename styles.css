@@ -841,27 +841,43 @@ hr {
     font-family: var(--font-heading);
 }
 
+/* Row dividers as in the desktop frame: 1px, white at 5% opacity, none after the last row; 15px / 16px row padding */
+
 .horaire-item {
     display: flex;
     justify-content: space-between;
-    padding: 1.1rem 0;
-    border-bottom: 1px solid #ddd;
+    padding: 15px 0 16px;
+    line-height: 1.55;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.horaire-item:last-child {
+.horaire-item:last-of-type {
     border-bottom: none;
 }
 
 .jour {
-    font-weight: 600;
+    font-weight: 300;
 }
 
 .heure {
+    font-weight: 300;
     color: whitesmoke;
 }
 
 .dimanche {
     color: lightgray;
+}
+
+.horaires_note {
+    margin: 1.25rem 0 0;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--text-color-light);
+}
+
+.horaires_note a {
+    color: var(--light-color-secondary);
+    white-space: nowrap;
 }
 
 /* Nous trouver */
