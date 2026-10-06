@@ -1,0 +1,4 @@
+# Ne jamais servir le fichier de notes pour Claude Code
+<Files "CLAUDE.md">
+    Require all denied
+</Files>
