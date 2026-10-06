@@ -342,7 +342,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #FAF8F3;
+    background-color: var(--white-color-primary);
     padding: 3.5rem 1.5rem;
     text-align: center;
 }
@@ -395,7 +395,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    background-color: #4A241D;
+    background-color: var(--card-color-primary);
     color: white;
 }
 
@@ -774,7 +774,7 @@ hr {
     width: 100%;
     flex: 1;
     padding-inline: 1.5rem;
-    background-color: #4A241D;
+    background-color: var(--card-color-primary);
     color: whitesmoke;
 }
 
@@ -821,11 +821,11 @@ hr {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #4A241D;
+    background-color: var(--card-color-primary);
 }
 
 .nous_header {
-    background-color: #4A241D;
+    background-color: var(--card-color-primary);
     color: #f5f3f0;
     width: 100%;
     padding: 60px 0 43px;
@@ -887,7 +887,7 @@ hr {
 .localisation {
     padding: 0 1.5rem 60px;
     color: #f5f3f0;
-    background-color: #4A241D;
+    background-color: var(--card-color-primary);
 }
 
 .container-localisation {
@@ -936,8 +936,8 @@ hr {
 
 footer {
     height: 200px;
-    background: #4A241D;
-    color: #8A7A6A;
+    background: #c0bcb3;
+    color: #4A241D;
     padding: 1em 0 1em 0;
     text-align: center;
 }
@@ -986,7 +986,7 @@ footer {
 
 footer p {
     font-size: 1vh;
-    color: #8A7A6A;
+    color: #4A241D;
     margin-top: 0.5em;
 }
 
@@ -1439,12 +1439,12 @@ h2.section_title {
         width: 100%;
         font-family: 'DM Sans';
         font-weight: 300;
-        color: #a5a39f;
-        background-color: whitesmoke;
+        color: var(--text-color-light);
+        background-color: var(--card-color-primary);
     }
 
     .soins h3 {
-        color: black;
+        color: var(--accent-color-yellow);
         padding: 0 20px 20px;
         font-size: 1.6rem;
         margin-left: 40px;
@@ -1455,12 +1455,12 @@ h2.section_title {
         font-size: 1.2rem;
         margin-left: 40px;
         padding: 0 20px;
-        color: #8A7A6A;
+        color: var(--text-color-light);
     }
 
     .soins a {
         display: block;
-        color: black;
+        color: var(--white-color-primary);
         margin-left: 60px;
     }
 
