@@ -594,6 +594,7 @@ hr {
 .horaires {
     width: 100%;
     flex: 1;
+    padding-inline: 1.5rem;
     background-color: #4A241D;
     color: whitesmoke;
 }
@@ -602,7 +603,6 @@ hr {
     display: block;
     text-transform: uppercase;
     font-size: 1rem;
-    margin-left: 25px;
     color: #FFD074;
 }
 
@@ -615,7 +615,7 @@ hr {
 .horaire-item {
     display: flex;
     justify-content: space-between;
-    padding: 25px;
+    padding: 1.1rem 0;
     border-bottom: 1px solid #ddd;
 }
 
@@ -649,7 +649,7 @@ hr {
     background-color: #4A241D;
     color: #f5f3f0;
     width: 100%;
-    padding: 60px 0 0;
+    padding: 60px 0 43px;
     text-align: left;
 }
 
@@ -683,11 +683,26 @@ hr {
 
 /* Location */
 
-.localisation > small {
+.localisation > small,
+.info_label {
     display: block;
     text-transform: uppercase;
     font-size: 1rem;
     color: var(--light-color-secondary);
+}
+
+.info_label {
+    margin-top: 3rem;
+}
+
+.telephone {
+    margin: 1rem 0 0;
+    font-weight: 400;
+}
+
+.telephone a {
+    color: inherit;
+    text-decoration: none;
 }
 
 .localisation {
@@ -1124,7 +1139,8 @@ h2.section_title {
     .nous_trouver {
         flex-direction: row;
         flex-wrap: wrap;
-        align-items: center;
+        align-items: flex-start;
+        column-gap: 3rem;
         padding-inline: max(1.5rem, calc((100% - 1112px) / 2));
     }
 
@@ -1133,8 +1149,10 @@ h2.section_title {
         width: 100%;
     }
 
+    /* Two equal columns (532px each with the 48px gap), as in the desktop frame */
+
     .localisation {
-        flex: 1;
+        flex: 1 1 0;
         padding-inline: 0;
     }
 
@@ -1144,8 +1162,9 @@ h2.section_title {
     }
 
     .horaires {
-        width: 35%;
-        flex: none;
+        width: auto;
+        flex: 1 1 0;
+        padding-inline: 0;
         font-weight: 200;
     }
 
