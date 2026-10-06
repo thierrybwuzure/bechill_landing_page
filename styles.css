@@ -1576,6 +1576,13 @@ h2.section_title {
         align-items: stretch;
     }
 
+    /* Submit button: the form width divided by the golden ratio (about 407px), centered under the fields */
+
+    .contact-form button {
+        align-self: center;
+        width: calc(100% / var(--golden-ratio));
+    }
+
     .contact_photo {
         display: block;
         position: relative;
