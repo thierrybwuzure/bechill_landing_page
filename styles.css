@@ -794,6 +794,10 @@ hr {
     color: #8A7A6A;
 }
 
+.formation_bio_photo {
+    display: none;
+}
+
 .formation_bio .section_title {
     margin: 0 0 1.5rem;
     color: var(--text-color-light);
@@ -1358,6 +1362,35 @@ h2.section_title {
 
     .formation_band {
         padding-block: 5rem;
+    }
+
+    /* Son parcours: the text and a photo split the 1112px column on the golden ratio (1.618 : 1) */
+
+    .formation_bio {
+        display: grid;
+        grid-template-columns: 1.618fr 1fr;
+        column-gap: 3rem;
+    }
+
+    .formation_bio > * {
+        grid-column: 1;
+    }
+
+    .formation_bio_photo {
+        display: block;
+        position: relative;
+        grid-column: 2;
+        grid-row: 1 / span 6;
+        overflow: hidden;
+        border-radius: 5px;
+    }
+
+    .formation_bio_photo img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     .formation_band_programme {
