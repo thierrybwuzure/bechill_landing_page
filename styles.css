@@ -622,7 +622,9 @@ hr {
 }
 
 .formation_students .section_title {
+    width: auto;
     margin: 0 0 1.5rem;
+    text-align: center;
 }
 
 /* Placeholder until asset/formation-students.jpg is added (59 : 75 on mobile, as in Version 3) */
