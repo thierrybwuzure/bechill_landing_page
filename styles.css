@@ -2,6 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
+/* Heading font candidates. To switch, uncomment ONE line below and set --font-heading in :root to its token.
+   Each @import is render-blocking, so keep only the fonts in use (Playfair Display is the active one above).
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloock&display=swap');
+*/
+
 html {
     scroll-behavior: smooth;
 }
@@ -36,6 +46,16 @@ body {
 
     /* Proportions */
     --golden-ratio: 1.618;
+
+    /* Fonts: --font-heading is the one used by every heading; point it at any token below */
+    --font-heading: var(--font-playfair);
+    --font-playfair: 'Playfair Display', serif;
+    --font-cormorant: 'Cormorant Garamond', serif;
+    --font-fraunces: 'Fraunces', serif;
+    --font-instrument: 'Instrument Serif', serif;
+    --font-newsreader: 'Newsreader', serif;
+    --font-bodoni: 'Bodoni Moda', serif;
+    --font-gloock: 'Gloock', serif;
 
 }
 
@@ -222,7 +242,7 @@ header {
 .hero-p1 {
     width: 85%;
     color: var(--white-color-primary);
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
     font-size: 2.8rem;
     text-align: center;
 }
@@ -334,7 +354,7 @@ header {
 }
 
 .philo_container h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
     font-size: 2.2rem;
     font-weight: 300;
     margin: 1rem 0 1.45rem;
@@ -410,7 +430,7 @@ header {
 
 .soins h3 {
     margin: 0;
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
     font-weight: 500;
     font-size: 1.125rem;
     letter-spacing: 0.07em;
@@ -462,7 +482,7 @@ header {
 }
 
 .immersion_header h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
     font-size: 52px;
     font-weight: 300;
     line-height: 55px;
@@ -491,7 +511,7 @@ header {
     height: 70px;
     border-radius: 8px;
     font-size: 5rem;
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
     color: #FFD074;
     font-weight: 400;
 }
@@ -511,7 +531,7 @@ hr {
 }
 
 .immersion_texte h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
     font-size: 24px;
     font-weight: 400;
     margin-bottom: 8px;
@@ -666,7 +686,7 @@ hr {
 
 .programme_num {
     flex: 0 0 2rem;
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
     font-size: 1.25rem;
     color: var(--light-color-secondary);
 }
@@ -688,7 +708,7 @@ hr {
 
 .formation_certificate h3 {
     margin: 0.75rem 0 0.5rem;
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
     font-size: 1.4rem;
     font-weight: 400;
     color: #222;
@@ -718,7 +738,7 @@ hr {
 
 .certificate_stats strong {
     display: block;
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
     font-size: 1.5rem;
     font-weight: 400;
     color: #C9A84C;
@@ -768,7 +788,7 @@ hr {
 .horaires h2 {
     text-align: center;
     margin-bottom: 20px;
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
 }
 
 .horaire-item {
@@ -820,7 +840,7 @@ hr {
 }
 
 .nous_header h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
     font-size: 52px;
     font-weight: 300;
     line-height: 55px;
@@ -977,7 +997,7 @@ footer p {
 .reviews h2 {
     height: 70px;
     text-align: center;
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
     margin: 0;
     background-color: #fff;
 }
@@ -1033,7 +1053,7 @@ sup {
 }
 
 .review-card p {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
     font-style: italic;
     font-size: 1.3rem;
     margin-bottom: 15px;
@@ -1049,7 +1069,7 @@ sup {
     margin: 0 auto;
     color: #777;
     font-size: 14px;
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
 }
 
 button {
@@ -1087,7 +1107,7 @@ button:hover {
 }
 
 .contact-section h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
     font-size: 3rem;
     font-weight: 400;
     margin: 0 0 0.2em 0;
@@ -1097,7 +1117,7 @@ button:hover {
 .contact-section h2 span {
     color: #FFD074;
     font-style: italic;
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
     font-weight: 400;
 }
 
@@ -1169,7 +1189,7 @@ button:hover {
 }
 
 .faq-section h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
     font-size: 3rem;
     font-weight: 400;
     margin: 0;
@@ -1178,7 +1198,7 @@ button:hover {
 .faq-section h2 span {
     color: #FFD074;
     font-style: italic;
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
     font-weight: 400;
 }
 
@@ -1199,7 +1219,7 @@ button:hover {
     padding: 1.2em 2em;
     border-bottom: 1px solid #b3a9a3;
     font-size: 1.2em;
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
 }
 
 .faq-item:last-child {
@@ -1235,7 +1255,7 @@ small.section_label {
 h2.section_title {
     margin-top: 0.95rem;
     margin-bottom: 0;
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
     font-size: 2rem;
     font-weight: 400;
     line-height: 1.15;
