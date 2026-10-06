@@ -593,6 +593,47 @@ hr {
     transition: 0.3s;
 }
 
+.hero-link {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 1.5rem;
+    font-size: 0.95rem;
+    color: #e0b96a;
+    text-decoration: underline;
+    text-underline-offset: 0.3em;
+}
+
+/* Formation details */
+
+.formation-details {
+    background-color: var(--text-color-light);
+}
+
+.formation_bio {
+    width: min(1112px, 100% - 3rem);
+    margin-inline: auto;
+    padding-block: 3.5rem;
+}
+
+.formation_bio .section_title {
+    margin: 0 0 1.5rem;
+}
+
+.formation_bio p {
+    max-width: 44rem;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #8A7A6A;
+}
+
+.formation_divider {
+    max-width: 44rem;
+    height: 1px;
+    margin: 1.5rem 0;
+    background-color: #C9A84C;
+}
+
 /* Horaires */
 
 .horaires {
@@ -1112,6 +1153,12 @@ h2.section_title {
 
     .hero-overlay {
         padding: 0 60px;
+    }
+
+    /* Formation details */
+
+    .formation_bio {
+        padding-block: 60px 6rem;
     }
 
     /* Immersion */
