@@ -614,7 +614,8 @@ hr {
 }
 
 .formation_bio,
-.formation_programme {
+.formation_programme,
+.formation_certificate {
     width: min(1112px, 100% - 3rem);
     margin-inline: auto;
 }
@@ -651,6 +652,64 @@ hr {
     font-family: 'Playfair Display', serif;
     font-size: 1.25rem;
     color: var(--light-color-secondary);
+}
+
+.formation_certificate {
+    padding: 1.75rem 1.5rem;
+    border: 1px solid rgba(201, 168, 76, 0.5);
+    border-radius: 8px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.certificate_icon {
+    display: block;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: #C9A84C;
+}
+
+.formation_certificate h3 {
+    margin: 0.75rem 0 0.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #222;
+}
+
+.formation_certificate p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #8A7A6A;
+}
+
+.certificate_stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin: 1.5rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.certificate_stats li {
+    padding: 0.9rem 0.25rem;
+    border: 1px solid rgba(201, 168, 76, 0.5);
+    border-radius: 6px;
+}
+
+.certificate_stats strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #C9A84C;
+}
+
+.certificate_stats span {
+    font-size: 0.75rem;
+    color: #8A7A6A;
 }
 
 .formation_bio .section_title {
@@ -1198,16 +1257,29 @@ h2.section_title {
     .formation-details {
         display: grid;
         grid-template-columns: 1fr 1.618fr;
+        grid-template-rows: auto 1fr;
         column-gap: 3rem;
+        row-gap: 2.5rem;
         align-items: start;
         padding-block: 60px 6rem;
         padding-inline: max(1.5rem, calc((100% - 1112px) / 2));
     }
 
     .formation_bio,
-    .formation_programme {
+    .formation_programme,
+    .formation_certificate {
         width: auto;
         margin: 0;
+    }
+
+    .formation_bio {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+    }
+
+    .formation_programme,
+    .formation_certificate {
+        grid-column: 2;
     }
 
     .programme_list li {
