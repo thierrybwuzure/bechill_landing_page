@@ -413,10 +413,6 @@ header {
     color: var(--accent-color-yellow);
 }
 
-.soins_header.cta.cta6 {
-    margin: 75px auto;
-}
-
 .flex {
     padding: 1rem 2.6rem 1.25rem;
 }
@@ -441,18 +437,6 @@ header {
 
 .soins a::after {
     content: ' →';
-}
-
-.cta6 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 310px;
-    background: transparent;
-    border: 1px solid rgb(158, 158, 158);
-    border-radius: 4px;
-    margin: 40px auto;
-    text-align: center;
 }
 
 /* Immersion */
