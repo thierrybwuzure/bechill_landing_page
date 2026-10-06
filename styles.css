@@ -626,11 +626,26 @@ hr {
 /* Formation details */
 
 .formation-details {
+    background-color: var(--white-color-primary);
+}
+
+/* Full-width colored bands, as in Version 3: brown (bio), white (programme and certificate), brown (students) */
+
+.formation_band {
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
     padding-block: 3.5rem;
-    background-color: var(--text-color-light);
+}
+
+.formation_band_bio,
+.formation_band_students {
+    background-color: var(--card-color-primary);
+    color: var(--text-color-light);
+}
+
+.formation_band_programme {
+    background-color: var(--white-color-primary);
 }
 
 .formation_bio,
@@ -645,6 +660,7 @@ hr {
     width: auto;
     margin: 0 0 1.5rem;
     text-align: center;
+    color: var(--text-color-light);
 }
 
 /* Students photo: portrait (59 : 75, as in Version 3) on mobile, 4 : 3 crop on desktop. The gold frame of the Figma export is recreated with a border. */
@@ -659,9 +675,10 @@ hr {
 
 .formation_programme {
     padding: 0.5rem 1.5rem;
+    border: 1px solid #e3e3e3;
     border-radius: 8px;
-    background-color: var(--card-color-primary);
-    color: var(--text-color-light);
+    background-color: var(--white-color-primary);
+    color: #222;
 }
 
 .programme_list {
@@ -677,7 +694,7 @@ hr {
     padding: 1.1rem 0;
     font-size: 0.9rem;
     line-height: 1.5;
-    border-bottom: 1px solid rgba(255, 208, 116, 0.35);
+    border-bottom: 1px solid #ececec;
 }
 
 .programme_list li:last-child {
@@ -688,14 +705,14 @@ hr {
     flex: 0 0 2rem;
     font-family: var(--font-heading);
     font-size: 1.25rem;
-    color: var(--light-color-secondary);
+    color: #C9A84C;
 }
 
 .formation_certificate {
     padding: 1.75rem 1.5rem;
     border: 1px solid rgba(201, 168, 76, 0.5);
     border-radius: 8px;
-    background-color: #fff;
+    background-color: var(--text-color-light);
     text-align: center;
 }
 
@@ -734,6 +751,7 @@ hr {
     padding: 0.9rem 0.25rem;
     border: 1px solid rgba(201, 168, 76, 0.5);
     border-radius: 6px;
+    background-color: var(--white-color-primary);
 }
 
 .certificate_stats strong {
@@ -751,6 +769,7 @@ hr {
 
 .formation_bio .section_title {
     margin: 0 0 1.5rem;
+    color: var(--text-color-light);
 }
 
 .formation_bio p {
@@ -758,14 +777,14 @@ hr {
     margin: 0;
     font-size: 1rem;
     line-height: 1.7;
-    color: #8A7A6A;
+    color: var(--text-color-light);
 }
 
 .formation_divider {
     max-width: 44rem;
     height: 1px;
     margin: 1.5rem 0;
-    background-color: #C9A84C;
+    background-color: rgba(255, 208, 116, 0.5);
 }
 
 /* Horaires */
@@ -1289,39 +1308,24 @@ h2.section_title {
         padding: 0 60px;
     }
 
-    /* Formation details: bio and programme split the 1112px column on the golden ratio (1 : 1.618) */
+    /* Formation details: the programme and the certificate card split the 1112px column on the golden ratio (1.618 : 1) */
 
-    .formation-details {
+    .formation_band {
+        padding-block: 5rem;
+    }
+
+    .formation_band_programme {
         display: grid;
-        grid-template-columns: 1fr 1.618fr;
-        grid-template-rows: auto 1fr;
+        grid-template-columns: 1.618fr 1fr;
         column-gap: 3rem;
-        row-gap: 2.5rem;
         align-items: start;
-        padding-block: 60px 6rem;
         padding-inline: max(1.5rem, calc((100% - 1112px) / 2));
     }
 
-    .formation_bio,
-    .formation_programme,
-    .formation_certificate,
-    .formation_students {
+    .formation_band_programme .formation_programme,
+    .formation_band_programme .formation_certificate {
         width: auto;
         margin: 0;
-    }
-
-    .formation_bio {
-        grid-column: 1;
-        grid-row: 1 / span 2;
-    }
-
-    .formation_programme,
-    .formation_certificate {
-        grid-column: 2;
-    }
-
-    .formation_students {
-        grid-column: 1 / -1;
     }
 
     .students_photo {
