@@ -2080,3 +2080,19 @@ a {
     }
 }
 
+/* Desktop composition (audit item 6, FAQ and Immersion left as they were):
+   the Certification card is as tall as the programme list with its content centred, so there is no empty block under it. */
+
+@media (min-width: 768px) {
+
+    .formation_band_programme {
+        align-items: stretch;
+    }
+
+    .formation_band_programme .formation_certificate {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
