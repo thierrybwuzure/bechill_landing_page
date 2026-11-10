@@ -1868,3 +1868,126 @@ h2.section_title {
         padding-inline: max(1.5rem, calc((100% - 1112px) / 2));
     }
 }
+
+/* Accessibility pass: contrast on light backgrounds, Contact and footer, focus, hover and tap targets (audit 2026-11-10). Design and layout unchanged. */
+
+:root {
+    --gold-on-light: #8F6B14;
+    --gold-numeral-on-light: #A07A22;
+    --contact-bg: #735F52;
+}
+
+/* 1. Gold on white or cream: small labels 4.9:1, large italic words and numerals 4:1 or more (was 1.45:1 and 2.29:1) */
+
+.philo_container small,
+.immersion_header small,
+.faq-section small,
+.reviews .reviews_label {
+    color: var(--gold-on-light);
+}
+
+.philo_h2-span,
+.immersion_header span,
+.faq-section h2 span,
+.faq-item span:last-child,
+.programme_num,
+.certificate_icon,
+.certificate_stats strong,
+.stars {
+    color: var(--gold-numeral-on-light);
+}
+
+@media (min-width: 768px) {
+
+    .immersion_num {
+        color: var(--gold-numeral-on-light);
+    }
+}
+
+/* 2. Contact section: same warm taupe, a few steps darker, so white (6:1) and the gold (4.2:1) read; footer icons and text dark brown */
+
+#contact,
+.contact-section {
+    background-color: var(--contact-bg);
+}
+
+.contact-section small {
+    color: #F1E2B8;
+}
+
+.contact-section h2 {
+    color: #fff;
+}
+
+footer p {
+    font-size: 0.8125rem;
+    background-color: transparent;
+}
+
+.social-icons img {
+    filter: brightness(0) opacity(0.78);
+}
+
+/* 3. Focus ring: 2px, brown on light backgrounds and gold on dark ones */
+
+header,
+.hero-container,
+.soins_container,
+.formation-hero,
+.formation_band_bio,
+.formation_band_students,
+.nous_trouver,
+.contact-section {
+    --focus-ring: #FFD074;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+    outline: 2px solid var(--focus-ring, #4A241D);
+    outline-offset: 3px;
+}
+
+/* Hover and focus feel: short colour transitions on links, hover colour on the plain text links */
+
+a {
+    transition: color 0.15s ease, opacity 0.15s ease;
+}
+
+.soins .flex a:hover,
+.hero-link:hover {
+    color: #fff;
+}
+
+/* Tap targets of at least 44px, with negative margins so the layout does not move */
+
+.soins .flex a {
+    display: block;
+    padding-block: 14px;
+    margin-block: -14px;
+}
+
+.telephone a {
+    display: inline-block;
+    padding-block: 12px;
+    margin-block: -12px;
+}
+
+.hero-link {
+    padding-block: 12px;
+    margin-block: -12px 0;
+}
+
+.contact-btn {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+}
+
+.social-icons a {
+    display: inline-block;
+    padding: 6px;
+    margin: -6px;
+}
