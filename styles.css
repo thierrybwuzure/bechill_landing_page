@@ -1839,3 +1839,32 @@ h2.section_title {
         line-height: 1.68;
     }
 }
+
+/* Desktop alignment with Figma Desktop - 1: every left-aligned header (Nos soins, Immersion, FAQ, Nous trouver, Contact, Avis clients)
+   starts on the left edge of the 1112px column. Immersion and FAQ lists and the Nous trouver columns start on it too; their widths are unchanged. */
+
+@media (min-width: 768px) {
+
+    .soins_header .section_label,
+    .soins_header .section_title,
+    .immersion_header .section_label,
+    .immersion_header .section_title,
+    .faq-section .section_label,
+    .faq-section .section_title,
+    .reviews .reviews_label {
+        width: min(1112px, 100% - 3rem);
+        margin-inline: auto;
+        text-align: left;
+    }
+
+    .immersion_box,
+    hr,
+    .faq-list {
+        margin-left: max(1.5rem, calc((100% - 1112px) / 2));
+        margin-right: auto;
+    }
+
+    .nous_trouver {
+        padding-inline: max(1.5rem, calc((100% - 1112px) / 2));
+    }
+}
