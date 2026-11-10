@@ -72,7 +72,7 @@ body {
 
 header {
     width: 100%;
-    background: #2d2d2d;
+    background: #130a05;
     color: whitesmoke;
     padding: 0.5em 1em;
     position: fixed;
@@ -120,7 +120,7 @@ header {
     position: absolute;
     top: 100%;
     left: 0;
-    background: #222;
+    background: #130a05;
     border-radius: 0 0 8px 8px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
     min-width: 180px;
