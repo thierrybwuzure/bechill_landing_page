@@ -1795,3 +1795,47 @@ h2.section_title {
         zoom: 1.6;
     }
 }
+
+/* Mobile alignment with Figma Version 4 (390px frame, scale 5.27): Immersion, Le toucher and opening hours.
+   Sizes rounded to 14px minimum. Desktop is untouched. */
+
+@media (max-width: 767px) {
+
+    /* Immersion: bigger muted numbers, smaller titles and text (Figma: 55px / 19.8px / 13.8px on 24px) */
+
+    .immersion_num {
+        flex: 0 0 4.25rem;
+        font-size: 3.46rem;
+        color: #A87B75;
+    }
+
+    .immersion_texte h3 {
+        font-size: 1.24rem;
+        line-height: 1.15;
+        margin: 1.5rem 0 0.5rem;
+    }
+
+    .immersion_texte p {
+        font-size: 0.875rem;
+        line-height: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Le toucher de l'ame: title line-height 43.5px, text 17.8px on 32.9px */
+
+    .philo_container h2 {
+        line-height: 2.7rem;
+    }
+
+    .philo_container p {
+        font-size: 1.1rem;
+        line-height: 2.05rem;
+    }
+
+    /* Opening hours: 14px on 23.5px */
+
+    .horaire-item {
+        font-size: 0.875rem;
+        line-height: 1.68;
+    }
+}
