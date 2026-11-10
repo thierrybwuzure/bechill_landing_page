@@ -41,7 +41,7 @@ body {
     --light-color-primary: #f9edd4;
     --light-color-secondary: #ffd074;
     --card-color-primary: #765550;
-    --accent-color-yellow: #fc0;
+    --accent-color-yellow: #ffd074;
     --text-color-light: #faf8f3;
 
     /* Proportions */
@@ -584,7 +584,7 @@ hr {
     font-size: 13px;
     margin-top: 0;
     margin-bottom: 15px;
-    color: #e0b96a;
+    color: #ffd074;
 }
 
 .hero-title {
@@ -594,7 +594,7 @@ hr {
 }
 
 .hero-title span {
-    color: #e0b96a;
+    color: #ffd074;
     font-style: italic;
 }
 
@@ -628,7 +628,7 @@ hr {
     width: fit-content;
     margin: 0 auto 1.5rem;
     font-size: 0.95rem;
-    color: #e0b96a;
+    color: #ffd074;
     text-decoration: underline;
     text-underline-offset: 0.3em;
 }
@@ -2181,3 +2181,78 @@ a {
     }
 }
 
+/* Polish pass (audit items 8, 9, 11 and 12): reviews, service tiles, readability, mobile paragraph.
+   Golds are now ffd074 on dark backgrounds (the old ffcc00 and e0b96a were folded into it) and the two darker golds on light ones. */
+
+/* Reviews: signatures on one line, a thin divider above each quote, the rating row on the same left edge as its label,
+   and two cards per view on tablet instead of three cramped ones */
+
+.review-card {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(143, 107, 20, 0.35);
+}
+
+.review-card p {
+    flex: 1;
+}
+
+@media (min-width: 768px) {
+
+    .reviews_rating {
+        width: min(1112px, 100% - 3rem);
+        justify-content: flex-start;
+        margin-inline: auto;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1099px) {
+
+    .review-card {
+        flex-basis: calc((100% - var(--review-gap)) / 2);
+    }
+}
+
+/* Service tiles on tablet: room above and below the text so the title does not touch the edge of the tile */
+
+@media (min-width: 768px) and (max-width: 1099px) {
+
+    .soins .flex {
+        padding-block: 1.75rem;
+    }
+}
+
+/* Readability: nothing below 14px */
+
+.hero-container small,
+.philo_container small,
+small.section_label,
+.contact-section small,
+.hero-tag,
+.localisation > small,
+.info_label,
+.horaires small {
+    font-size: 0.875rem;
+    letter-spacing: 0.16em;
+}
+
+.soins .flex a,
+.badge,
+.certificate_stats span,
+.avis,
+.info-localisation .btn,
+footer p {
+    font-size: 0.875rem;
+}
+
+/* Mobile: the Le toucher paragraph reads left-aligned with a normal line height under the centred title */
+
+@media (max-width: 767px) {
+
+    .philo_container p {
+        width: min(100%, 34rem);
+        text-align: left;
+        line-height: 1.65;
+    }
+}
