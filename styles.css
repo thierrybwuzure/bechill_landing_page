@@ -2096,3 +2096,88 @@ a {
     }
 }
 
+/* Immersion on desktop (option B): the list on the left and a photo on the right, split 1.618 : 1 like Contact and the programme row.
+   The photo is portrait (1 : 1.618), placed on the golden ratio against the list (0.382 of the free space above, 0.618 below), scrolls with the page, and is hidden on mobile. */
+
+.immersion_photo {
+    display: none;
+}
+
+@media (min-width: 768px) {
+
+    .immersion_container {
+        display: grid;
+        grid-template-columns: 1.618fr 1fr;
+        column-gap: 3rem;
+        padding-inline: max(1.5rem, calc((100% - 1112px) / 2));
+        padding-bottom: 60px;
+    }
+
+    .immersion_header {
+        grid-column: 1;
+    }
+
+    .immersion_header .section_label,
+    .immersion_header .section_title {
+        width: auto;
+        margin-inline: 0;
+    }
+
+    .immersion_box,
+    hr {
+        grid-column: 1;
+        width: auto;
+        margin: 0;
+    }
+
+    /* The free space above and below the photo (list height minus photo height) is split on the golden ratio: 0.382 above, 0.618 below */
+
+    .immersion_photo {
+        display: flex;
+        flex-direction: column;
+        grid-column: 2;
+        grid-row: 2 / span 9;
+    }
+
+    .immersion_photo::before,
+    .immersion_photo::after {
+        content: "";
+        flex-basis: 0;
+        flex-shrink: 1;
+    }
+
+    .immersion_photo::before {
+        flex-grow: 0.382;
+    }
+
+    .immersion_photo::after {
+        flex-grow: 0.618;
+    }
+
+    /* Portrait 1 : 1.618 */
+
+    .immersion_photo img {
+        flex: none;
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1.618;
+        object-fit: cover;
+        object-position: 45% 50%;
+        border-radius: 5px;
+        box-shadow: var(--shadow-photo);
+    }
+}
+
+/* Tablet: the list column is narrow, so the large numerals step down to fit it */
+
+@media (min-width: 768px) and (max-width: 1099px) {
+
+    .immersion_num {
+        flex: 0 0 4.5rem;
+        width: 4.5rem;
+        height: auto;
+        font-size: 3.5rem;
+    }
+}
+
