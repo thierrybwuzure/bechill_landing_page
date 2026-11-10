@@ -1991,3 +1991,92 @@ a {
     padding: 6px;
     margin: -6px;
 }
+
+/* Hero, type system and rhythm pass (audit 2026-11-10, items 3 to 5). */
+
+/* Hero: never shorter than the screen, never taller than its content; subtitle centred like the rest */
+
+.hero-container {
+    height: auto;
+    min-height: 100vh;
+    min-height: 100svh;
+    box-sizing: border-box;
+}
+
+.hero-p2 {
+    text-align: center;
+}
+
+@media (max-width: 767px) {
+
+    /* The logo no longer hides under the fixed 63px header, the title uses 4 lines instead of 6, and the button stays on screen */
+
+    .hero-container {
+        padding: calc(63px + 1.5rem) 25px 2.5rem;
+    }
+
+    .hero-p1 {
+        width: 100%;
+        font-size: clamp(2.25rem, 9.6vw, 2.8rem);
+        line-height: 1.15;
+    }
+
+    .hero-p1,
+    .hero-p2 {
+        text-wrap: balance;
+    }
+
+    .hero-p2 {
+        font-size: 1.125rem;
+        line-height: 1.5;
+    }
+
+    .cta1 {
+        margin-top: 1.75rem;
+    }
+}
+
+/* Type system: the Savoir-faire title uses the heading font, and every small label (hero tag, Adresse, Telephone, Horaires)
+   shares the section label style (12px, weight 500, tracking 0.18em). The Immersion numbers are no longer headings. */
+
+.hero-title {
+    font-family: var(--font-heading);
+}
+
+.hero-tag,
+.localisation > small,
+.info_label,
+.horaires small {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.7;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.immersion_num {
+    margin: 0.83em 0;
+}
+
+/* Rhythm on desktop: the gap between a section title and its content is 43px everywhere (FAQ and Contact were 32px),
+   and the hours start on the same line as the address instead of floating above it */
+
+@media (min-width: 768px) {
+
+    .faq-list {
+        margin-top: 43px;
+    }
+
+    .contact_layout {
+        margin-top: 43px;
+    }
+
+    .horaires {
+        grid-row: 2;
+        align-self: start;
+        margin: 0;
+    }
+}
+
