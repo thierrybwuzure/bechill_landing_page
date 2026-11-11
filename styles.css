@@ -3226,3 +3226,38 @@ footer p {
     -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
     mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
 }
+
+/* Avis clients: more white space (2026-11-11), steps of the golden scale: 4.236rem above and below on phones, 6.854rem from 768px;
+   1.618rem more between the label and the quotes, and between the quotes and the rating row. */
+
+.reviews {
+    padding-top: 4.236rem;
+    padding-bottom: 4.236rem;
+}
+
+.reviews .reviews_label {
+    margin-bottom: 1.618rem;
+}
+
+.reviews_rating {
+    margin-top: 1.618rem;
+}
+
+@media (min-width: 768px) {
+
+    .reviews {
+        padding-top: 6.854rem;
+        padding-bottom: 6.854rem;
+    }
+}
+
+/* Avis clients: 2.618rem (next golden step) between the label and the quotes, and between the quotes and the rating row */
+
+.reviews .reviews_label {
+    margin-bottom: 2.618rem;
+}
+
+.reviews_rating {
+    margin-top: 2.618rem;
+}
+
