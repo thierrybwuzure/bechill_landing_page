@@ -4061,3 +4061,23 @@ footer .social-icons a {
 #programme {
     scroll-margin-top: 63px;
 }
+
+/* Nos soins photos, warmer (2026-11-11, the user's request). The grade above is raised one step towards amber: more sepia on all four, a little more saturation back on the
+   massage and drainage photos so they do not look washed out, and the head spa hue turned a touch further towards warm so its lilac cast fades. Filters only. */
+
+.soins img[src*="service-massage"] {
+    filter: sepia(0.42) saturate(1.2) brightness(0.98) contrast(1.03);
+}
+
+.soins img[src*="service-head-spa"] {
+    filter: hue-rotate(24deg) saturate(0.45) sepia(0.62) brightness(1) contrast(1.05);
+}
+
+.soins img[src*="service-drainage"] {
+    filter: sepia(0.34) saturate(1) brightness(1.02);
+}
+
+.soins img[src*="service-soin-visage"] {
+    filter: sepia(0.34) saturate(0.92) hue-rotate(-4deg) brightness(1.01);
+}
+
