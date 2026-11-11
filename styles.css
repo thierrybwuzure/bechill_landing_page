@@ -3635,3 +3635,42 @@ footer p {
     }
 }
 
+/* Savoir-faire: a darker background (2026-11-11). The flat overlay goes from 68% to 84% of the header brown-black (#130a05), so the photo stays as a
+   quiet texture of hands and light behind the title, and the white title, the chips and the button stand out more. */
+
+.formation-hero {
+    background-image: linear-gradient(rgba(19, 10, 5, 0.84), rgba(19, 10, 5, 0.84)), url("asset/savoir-faire.jpg");
+}
+
+/* Savoir-faire: more white space between the elements (2026-11-11), steps of the golden scale: label to title 1.618rem (was 0.95rem), title to chips
+   2.618rem (was 1.75rem), chips to button 3.236rem (was 2.618rem), button to link 0.618rem (they were touching, only the link's own padding separated them).
+   The band keeps its height and its 1 : 1.618 vertical placement unless the content no longer fits. */
+
+.formation-hero .hero-title {
+    margin-top: 1.618rem;
+    margin-bottom: 2.618rem;
+}
+
+.formation-hero .hero-badges {
+    margin-bottom: 3.236rem;
+}
+
+.formation-hero .hero-link {
+    margin-top: 0.618rem;
+}
+
+/* Savoir-faire: texture (2026-11-11). The same film grain as the students and Son parcours bands (white noise, here at 6% instead of 10% so the band stays dark, a 240px tile) and a faint warm gold
+   glow (9%) at the top centre, behind the title, on top of the 84% dark overlay and the photo. Layers from top to bottom: grain, glow, dark overlay, photo.
+   Each layer has its own size and position, so the grain stays a small tile and the photo keeps its "cover" and its 45% vertical position. */
+
+.formation-hero {
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+        radial-gradient(ellipse 55% 75% at 50% 0%, rgba(255, 208, 116, 0.09), transparent 70%),
+        linear-gradient(rgba(19, 10, 5, 0.84), rgba(19, 10, 5, 0.84)),
+        url("asset/savoir-faire.jpg");
+    background-size: 240px 240px, 100% 100%, 100% 100%, cover;
+    background-position: 0 0, center, center, center 45%;
+    background-repeat: repeat, no-repeat, no-repeat, no-repeat;
+}
+
