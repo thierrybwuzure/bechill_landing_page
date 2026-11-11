@@ -4258,3 +4258,18 @@ footer .social-icons a {
     }
 }
 
+/* Nos soins header and tile panels: the colour and the texture of the Certification band (2026-11-11, the user's request): the brown #765550 (--card-color-primary), the white
+   film grain at 10%, a warm gold glow at the top centre (16%) and a dark vignette at the bottom (18%). This replaces the cocoa #5B392D and the dark grain used a moment ago.
+   The texture was then halved at the user's request (grain 5%, glow 7%, vignette 10%). The pale gold text had less contrast than on the cocoa and the dark grain (see CLAUDE.md). */
+
+#soins_header,
+.soins .flex {
+    background-color: var(--card-color-primary);
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+        radial-gradient(ellipse 60% 55% at 50% 0%, rgba(255, 208, 116, 0.07), transparent 70%),
+        radial-gradient(ellipse 90% 60% at 50% 110%, rgba(0, 0, 0, 0.1), transparent 70%);
+    background-size: 240px 240px, 100% 100%, 100% 100%;
+    background-repeat: repeat, no-repeat, no-repeat;
+}
+
