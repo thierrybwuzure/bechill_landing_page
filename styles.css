@@ -4001,3 +4001,92 @@ footer .social-icons a {
         grid-row: 2 / span 5;
     }
 }
+
+/* Savoir-faire, one idea per band (2026-11-11). The band tried to do three jobs at the same weight: introduce the training, give four credentials as boxed chips
+   (which looked clickable and were not) and offer two competing actions. Now the hierarchy is: the label and the title, one line saying what the training is,
+   one button, "Découvrir la formation", that scrolls to Son parcours (the next thing to read), and the four credentials as a quiet line of plain text under it.
+   The contact action moved to the end of the programme (see .programme_cta), where the visitor knows what they would sign up for. */
+
+.formation-hero .hero-title {
+    margin-bottom: 1.618rem;
+}
+
+.formation-hero .hero-lead {
+    max-width: 30rem;
+    margin: 0 auto 2.618rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.86);
+}
+
+.formation-hero .hero-credentials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem 0;
+    max-width: 40rem;
+    margin: 2.618rem auto 0;
+    font-size: 0.875rem;
+    letter-spacing: 0.08em;
+    color: #E8D5A3;
+}
+
+.formation-hero .hero-credentials span + span::before {
+    content: "\00b7";
+    margin-inline: 0.75em;
+}
+
+/* The programme ends with the contact action */
+
+.programme_action {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.618rem;
+}
+
+.programme_cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    box-sizing: border-box;
+    padding: 0.875rem 1.618rem;
+    border-radius: 4px;
+    background: #4A241D;
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.programme_cta:hover,
+.programme_cta:focus-visible {
+    background: #FFD074;
+    color: #4A241D;
+}
+
+.programme_cta:focus-visible {
+    outline: 2px solid #4A241D;
+    outline-offset: 3px;
+}
+
+/* Under 768px the four credentials stack one per line, without the dots, which would otherwise land at the start of the wrapped lines (the line needs about 750px) */
+
+@media (max-width: 767px) {
+
+    .formation-hero .hero-credentials {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    .formation-hero .hero-credentials span + span::before {
+        content: none;
+    }
+}
