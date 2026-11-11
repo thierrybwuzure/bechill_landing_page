@@ -3541,3 +3541,97 @@ footer p {
     box-shadow: 0 22px 48px rgba(0, 0, 0, 0.38), 0 4px 10px rgba(0, 0, 0, 0.22);
 }
 
+/* FAQ, balanced with its neighbours (2026-11-11). From 768px the section uses the same two equal columns as Nous trouver and Contact on the
+   1112px column (532px each with the 48px gap at 1440): the label and the title on the left, the four questions on the right, so the section
+   shares the vertical axis (x=737 at 1440) with the street plan, the hours, the form and the photo. Before, the 800px list sat on the left with
+   about 300px of empty white space to its right. On phones nothing changes (one centred column). */
+
+@media (min-width: 768px) {
+
+    .faq-section {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-rows: auto auto 1fr;
+        column-gap: 3rem;
+        width: min(1112px, 100% - 3rem);
+        margin-inline: auto;
+    }
+
+    .faq-section .section_label,
+    .faq-section .section_title {
+        grid-column: 1;
+        width: auto;
+        margin-inline: 0;
+    }
+
+    .faq-section .section_label {
+        grid-row: 1;
+    }
+
+    .faq-section .section_title {
+        grid-row: 2;
+    }
+
+    .faq-section .faq-list {
+        grid-column: 2;
+        grid-row: 1 / span 3;
+        width: auto;
+        margin: 0;
+    }
+}
+
+/* FAQ: a white box on a cream section, and a decoration under the title (2026-11-11).
+   The box was already #fff but the section behind it was white too, so it only showed as a thin outline. The section now has the warm cream paper of the
+   programme band (a fine dark grain at 5% on a gradient from #fbf8f1 to #f6f1e7), so the white box stands out, with a slightly deeper soft shadow.
+   Under the title, in the left column that the list leaves empty, a large question mark in the heading font, italic, in the site gold at 16%:
+   decorative only (a pseudo-element, so screen readers do not read it), and hidden on phones, where there is no empty column. */
+
+.faq-section {
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .25 0 0 0 0 .18 0 0 0 0 .1 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+        linear-gradient(180deg, #fbf8f1 0%, #f6f1e7 100%);
+}
+
+.faq-list {
+    background-color: #fff;
+    box-shadow: 0 10px 30px rgba(44, 40, 34, 0.08);
+}
+
+@media (min-width: 768px) {
+
+    /* The section is a grid on the 1112px column, but its background must fill the whole page width: the column is made with padding instead of width */
+
+    .faq-section {
+        width: auto;
+        margin-inline: 0;
+        padding-inline: max(1.5rem, calc((100% - 1112px) / 2));
+    }
+
+    .faq-section::after {
+        content: "?";
+        grid-column: 1;
+        grid-row: 3;
+        align-self: start;
+        margin-top: 1.618rem;
+        font-family: var(--font-heading);
+        font-style: italic;
+        font-weight: 400;
+        font-size: 16rem;
+        line-height: 0.8;
+        color: rgba(160, 122, 34, 0.16);
+        user-select: none;
+        pointer-events: none;
+    }
+}
+
+/* FAQ: a wider box (2026-11-11). From 768px the columns are 1 : 1.618 (title : questions) instead of 1 : 1, so the box goes from 532px to 658px at 1440
+   (the width the contact form had before). Its right edge stays on the column edge (x=1269 at 1440, like the hours and the plan above); the left edge now
+   comes 125px further left (x=612), which is the price of a wider box on the same column. The title column is 407px, wide enough for "fréquentes" (about 250px). */
+
+@media (min-width: 768px) {
+
+    .faq-section {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.618fr);
+    }
+}
+
