@@ -4479,3 +4479,24 @@ footer .social-icons a {
 .soins .flex a::after {
     content: none;
 }
+
+/* Savoir-faire: the button is the last element of the band (2026-11-11, the user's request). The order is now label, title, line, credentials, button. The space between the line and
+   the credentials is 2.618rem (the credentials' top margin, the line's bottom margin is dropped), and the button sits 2.618rem under the credentials. */
+
+.formation-hero .hero-lead {
+    margin-bottom: 0;
+}
+
+.formation-hero .hero-actions {
+    margin-top: 2.618rem;
+}
+
+/* Tablets (768 to 999px): the four credentials are stacked there, so the content is as tall as the band (3px above, 0px below at 768px). The band gets 4.236rem of padding
+   above and below and grows with its content. */
+
+@media (min-width: 768px) and (max-width: 999px) {
+
+    .formation-hero {
+        padding-block: 4.236rem;
+    }
+}
