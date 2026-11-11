@@ -127,6 +127,28 @@ if (track) {
     requestAnimationFrame(frame);
 }
 
+// Back to top button: appears once the visitor has scrolled past the first screen
+
+const toTop = document.getElementById("toTop");
+
+if (toTop) {
+    let ticking = false;
+
+    function updateToTop() {
+        ticking = false;
+        toTop.classList.toggle("is-visible", window.scrollY > window.innerHeight * 0.8);
+    }
+
+    window.addEventListener("scroll", () => {
+        if (!ticking) {
+            ticking = true;
+            requestAnimationFrame(updateToTop);
+        }
+    }, { passive: true });
+
+    updateToTop();
+}
+
 // Header scroll background
 /* window.addEventListener('scroll', () => {
     const header = document.querySelector('header');

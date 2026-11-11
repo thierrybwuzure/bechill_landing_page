@@ -3707,3 +3707,165 @@ footer p {
     background-repeat: repeat, no-repeat;
 }
 
+/* Footer, redesigned (2026-11-11). The footer was a thin 200px strip: three icons 160px apart and one long line of small text, with no way to move around the page.
+   Now, centred on the header's brown-black, from top to bottom: the hand logo (the one of the hero; the text logo of the header was tried first) (the four menu links were tried and removed at the user's request),
+   the three social icons close together (44px tap targets), a fine gold hairline, then the legal lines: the year (2026), the address, and the phone number as a
+   tap-to-call link. A faint grain, like the other dark bands. The spacing follows the golden scale (0.618rem, 1rem, 1.618rem, 2.618rem). */
+
+footer {
+    height: auto;
+    padding: 4.236rem 1.5rem 2.618rem;
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 240px 240px;
+}
+
+.footer_inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 40rem;
+    margin-inline: auto;
+}
+
+.footer_logo {
+    display: block;
+    width: 8.5rem;
+    height: auto;
+}
+
+.footer_legal a {
+    color: rgba(255, 255, 255, 0.78);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer_legal a:hover,
+.footer_legal a:focus-visible {
+    color: #E8D5A3;
+}
+
+footer .social-icons {
+    margin: 1.618rem 0 0;
+}
+
+footer .social-icons-layout {
+    gap: 1rem;
+}
+
+footer .social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    margin: 0;
+}
+
+.footer_legal {
+    width: 100%;
+    margin: 2.618rem 0 0;
+    padding-top: 1.618rem;
+    border-top: 1px solid rgba(232, 213, 163, 0.25);
+    font-size: 0.875rem;
+    line-height: 1.8;
+    text-align: center;
+}
+
+/* Back to top button (2026-11-11). Fixed at the bottom right, hidden on the first screen and shown by script.js after 80% of a screen of scrolling.
+   A 48px square (above the 44px tap minimum) with the 4px corners of the site's buttons, the header's brown-black with a fine pale-gold border so it stays visible
+   on the white, cream, brown and dark footer sections alike, a gold chevron that lifts on hover, and the chocolate brown (#4A241D, the colour of the form button) as the hover background. The scroll itself is the page's smooth scroll. */
+
+.to_top {
+    position: fixed;
+    right: 1.618rem;
+    bottom: 1.618rem;
+    z-index: 90;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(232, 213, 163, 0.55);
+    border-radius: 4px;
+    background: rgba(19, 10, 5, 0.92);
+    color: #FFD074;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s, background-color 0.2s ease, color 0.2s ease;
+}
+
+.to_top.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.to_top:hover,
+.to_top:focus-visible {
+    background: #4A241D;
+    border-color: #FFD074;
+    color: #FFD074;
+}
+
+.to_top:focus-visible {
+    outline: 2px solid #FFD074;
+    outline-offset: 3px;
+}
+
+.to_top svg {
+    transition: transform 0.2s ease;
+}
+
+.to_top:hover svg {
+    transform: translateY(-2px);
+}
+
+@media (max-width: 767px) {
+
+    .to_top {
+        right: 1rem;
+        bottom: 1rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .to_top,
+    .to_top svg {
+        transition: none;
+    }
+}
+
+/* Footer: the address, the phone number and the copyright on one line (2026-11-11), separated by middle dots. Under 600px they stack
+   one above the other instead, so a narrow phone never breaks the address and leaves a lone word on the next line. */
+
+.footer_address,
+.footer_phone,
+.footer_copy {
+    display: inline-block;
+}
+
+.footer_phone::before,
+.footer_copy::before {
+    content: "\00b7";
+    margin: 0 0.4em 0 0.1em;
+}
+
+@media (max-width: 599px) {
+
+    .footer_address,
+    .footer_phone,
+    .footer_copy {
+        display: block;
+    }
+
+    .footer_phone::before,
+    .footer_copy::before {
+        content: none;
+    }
+}
+
