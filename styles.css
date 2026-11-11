@@ -4273,3 +4273,99 @@ footer .social-icons a {
     background-repeat: repeat, no-repeat, no-repeat;
 }
 
+/* Savoir-faire credentials, better styled (2026-11-11, the user's request). The four facts were a plain line of pale-gold text with dots. They are now a framed strip: a fine
+   gold line above and below (35%), the four items in uppercase, 14px, tracking 0.14em, with a thin vertical gold divider between them (25%) and generous padding; on hover
+   nothing happens (they are not links). Under 1000px they stack (four across need about 870px), one per line, separated by thin horizontal lines. */
+
+.formation-hero .hero-credentials {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 0;
+    width: max-content;
+    max-width: 100%;
+    margin: 2.618rem auto 0;
+    padding: 0;
+    border-top: 1px solid rgba(232, 213, 163, 0.35);
+    border-bottom: 1px solid rgba(232, 213, 163, 0.35);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #E8D5A3;
+}
+
+.formation-hero .hero-credentials span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1.618rem;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.formation-hero .hero-credentials span + span {
+    border-left: 1px solid rgba(232, 213, 163, 0.25);
+}
+
+.formation-hero .hero-credentials span + span::before {
+    content: none;
+}
+
+@media (max-width: 999px) {
+
+    .formation-hero .hero-credentials {
+        flex-direction: column;
+        width: 100%;
+        max-width: 20rem;
+    }
+
+    .formation-hero .hero-credentials span {
+        padding: 0.8rem 1rem;
+    }
+
+    .formation-hero .hero-credentials span + span {
+        border-left: 0;
+        border-top: 1px solid rgba(232, 213, 163, 0.25);
+    }
+}
+
+/* The text block of the band is capped at 32rem; the strip needs the width of its four items, so the cap is lifted from 1000px (the title and the line keep their own limits) */
+
+@media (min-width: 1000px) {
+
+    .formation-hero .hero-overlay {
+        max-width: min(62rem, 100%);
+    }
+}
+
+/* On very narrow phones the longest credential may wrap inside the strip */
+
+@media (max-width: 379px) {
+
+    .formation-hero .hero-credentials span {
+        white-space: normal;
+        letter-spacing: 0.1em;
+    }
+}
+
+/* Credentials strip: a closed frame (2026-11-11). The strip only had lines above and below; the left and right edges now have the same fine gold line, so it is a full box. */
+
+.formation-hero .hero-credentials {
+    border: 1px solid rgba(232, 213, 163, 0.35);
+}
+
+@media (max-width: 999px) {
+
+    .formation-hero .hero-credentials {
+        border: 1px solid rgba(232, 213, 163, 0.35);
+    }
+}
+
+/* "Découvrir la formation": no arrow (2026-11-11, the user's request). The button keeps its white fill, text and hover. */
+
+.formation-hero .hero-button::after {
+    content: none;
+}
+
