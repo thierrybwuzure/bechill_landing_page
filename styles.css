@@ -3327,3 +3327,39 @@ footer p {
     }
 }
 
+/* Nous trouver: more white space (2026-11-11), the same golden steps as Avis clients: 4.236rem above and below on phones, 6.854rem from 768px,
+   and 2.618rem between the title block and the address / hours row. */
+
+.nous_trouver {
+    padding-top: 4.236rem;
+    padding-bottom: 4.236rem;
+}
+
+@media (min-width: 768px) {
+
+    .nous_trouver {
+        padding-top: 6.854rem;
+        padding-bottom: 6.854rem;
+        row-gap: 2.618rem;
+    }
+
+    .nous_map {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+/* The section padding above now sets the space around the title block, so the header's own 60px / 43px padding is dropped
+   (it doubled the space and pushed the title down inside a taller row); the title block starts level with the top of the street plan. */
+
+.nous_header {
+    padding: 0 0 2.618rem;
+}
+
+@media (min-width: 768px) {
+
+    .nous_header {
+        padding: 0;
+    }
+}
+
