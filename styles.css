@@ -2631,7 +2631,7 @@ footer p {
 /* Savoir-faire: same style as the other sections (2026-11-11). The content is unchanged; only the order of the two links is, so the button comes first.
    - Everything stays centred (the user's call, 2026-11-11; a left-aligned version on the column edge was tried first)
    - Label in the section label style, title at the section title size (32px phone, 52px from 768px) with the gold italic words
-   - Facts as small chips with a faint fill and the 4px radius of the buttons (the pills were rounded at 20px); a hairline list with stars was tried and the user preferred the chips
+   - Facts as small boxed chips on one line (a hairline list, a one-line text version with stars and a bottom bar were tried; the user came back to the chips)
    - The button is the solid white button of the Nos soins tiles (4px radius, 48px tall, uppercase with an arrow), the link a quiet pale gold text link
    - A flat brown-black overlay of 68%, the same as the Nos soins header, over a new photo: hands at work in soft light (Unsplash, Toa Heftiba, asset/savoir-faire.jpg);
      the previous photo is asset/formation 1.png */
@@ -2665,9 +2665,11 @@ footer p {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.618rem;
-    margin: 0 0 2rem;
+    gap: 0.5rem;
+    margin: 0 auto 2.618rem;
 }
+
+/* The four facts are boxed chips again (faint fill, 1px border, 4px corners), on one line from 768px; wrapped below that */
 
 .formation-hero .badge {
     padding: 0.5rem 1rem;
@@ -2678,14 +2680,37 @@ footer p {
     font-size: 0.875rem;
     font-weight: 400;
     letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+
+    .formation-hero .hero-overlay {
+        max-width: min(46rem, 100%);
+    }
+
+    .formation-hero .hero-badges {
+        flex-wrap: nowrap;
+        gap: 0.618rem;
+    }
+}
+
+@media (max-width: 479px) {
+
+    .formation-hero .hero-badges {
+        max-width: 21rem;
+    }
+
+    .formation-hero .badge {
+        padding-inline: 0.75rem;
+    }
 }
 
 .hero-actions {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 0.5rem 1.618rem;
+    gap: 0.5rem;
 }
 
 .formation-hero .hero-button {
@@ -2761,25 +2786,9 @@ footer p {
     }
 }
 
-/* Savoir-faire refinements: the chips wrap two and two instead of three and one, and the vertical gaps follow the golden-ratio scale
-   (label 0.95rem, title 1.618rem, chips 2.618rem). The band height and its 1 : 1.618 vertical placement are unchanged. */
+/* Savoir-faire refinements: the vertical gaps follow the golden-ratio scale (label 0.95rem, title 1.75rem, chips 2.618rem).
+   The band height and its 1 : 1.618 vertical placement are unchanged. */
 
 .formation-hero .hero-title {
-    margin-bottom: 1.618rem;
-}
-
-.formation-hero .hero-badges {
-    max-width: 26rem;
-    margin: 0 auto 2.618rem;
-}
-
-@media (max-width: 479px) {
-
-    .formation-hero .hero-badges {
-        gap: 0.5rem;
-    }
-
-    .formation-hero .badge {
-        padding-inline: 0.875rem;
-    }
+    margin-bottom: 1.75rem;
 }
