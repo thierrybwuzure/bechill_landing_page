@@ -3982,3 +3982,12 @@ footer .social-icons a {
     scroll-margin-top: 63px;
 }
 
+/* Anchors: every menu and page link lands with its section just under the 63px fixed bar (2026-11-11 link test). Only the Nos soins and Nous trouver anchors had
+   this, so the top of the Formation band, of Son parcours and of the Contact section hid under the bar. */
+
+#formation,
+#formation-details,
+#contact {
+    scroll-margin-top: 63px;
+}
+
