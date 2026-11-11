@@ -4005,7 +4005,7 @@ footer .social-icons a {
 /* Savoir-faire, one idea per band (2026-11-11). The band tried to do three jobs at the same weight: introduce the training, give four credentials as boxed chips
    (which looked clickable and were not) and offer two competing actions. Now the hierarchy is: the label and the title, one line saying what the training is,
    one button, "Découvrir la formation", that scrolls to Son parcours (the next thing to read), and the four credentials as a quiet line of plain text under it.
-   The contact action moved to the end of the programme (see .programme_cta), where the visitor knows what they would sign up for. */
+   The contact button that was moved under the programme list was then removed at the user's request. */
 
 .formation-hero .hero-title {
     margin-bottom: 1.618rem;
@@ -4038,43 +4038,7 @@ footer .social-icons a {
     margin-inline: 0.75em;
 }
 
-/* The programme ends with the contact action */
-
-.programme_action {
-    display: flex;
-    justify-content: center;
-    margin-top: 2.618rem;
-}
-
-.programme_cta {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 48px;
-    box-sizing: border-box;
-    padding: 0.875rem 1.618rem;
-    border-radius: 4px;
-    background: #4A241D;
-    color: #fff;
-    font-size: 0.875rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.programme_cta:hover,
-.programme_cta:focus-visible {
-    background: #FFD074;
-    color: #4A241D;
-}
-
-.programme_cta:focus-visible {
-    outline: 2px solid #4A241D;
-    outline-offset: 3px;
-}
+/* (The "Me contacter pour la formation" button under the programme box was removed at the user's request, 2026-11-11.) */
 
 /* Under 768px the four credentials stack one per line, without the dots, which would otherwise land at the start of the wrapped lines (the line needs about 750px) */
 
