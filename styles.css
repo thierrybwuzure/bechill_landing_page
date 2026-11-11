@@ -2792,3 +2792,31 @@ footer p {
 .formation-hero .hero-title {
     margin-bottom: 1.75rem;
 }
+
+/* Son parcours: the paragraphs use the type of the other sections on a brown background (the Nos soins tiles: 19.2px, weight 300, line height 1.65);
+   on phones the size of Le toucher de l'ame (17.6px). It was 16px in weight 400. */
+
+.formation_bio p {
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.65;
+}
+
+@media (min-width: 768px) {
+
+    .formation_bio p {
+        font-size: 1.2rem;
+    }
+}
+
+/* Son parcours photo on tablet and narrow desktop (768 to 999px): a portrait 1 : 1.618 aligned to the top of the text, instead of a strip as tall
+   as the three paragraphs (251 x 1037 px at 768 px, which cut the bottle in half). From 1000px it still fills the height of the text. */
+
+@media (min-width: 768px) and (max-width: 999px) {
+
+    .formation_bio_photo {
+        align-self: start;
+        aspect-ratio: 1 / 1.618;
+    }
+}
+
