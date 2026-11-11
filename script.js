@@ -13,7 +13,7 @@ window.addEventListener('click', (e) => {
     }
 });
 
-// Reviews: looping strip, one card at a time, no arrows
+// Reviews: a slow continuous scroll that loops, paused while the pointer or the focus is on the strip
 
 const track = document.querySelector(".carousel-track");
 
@@ -21,126 +21,110 @@ if (track) {
     const viewport = track.parentElement;
     const originals = Array.from(track.children);
     const total = originals.length;
-    const AUTO_MS = 8000;
+    const SPEED = 28; // pixels per second: slow on purpose
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-    // Clone the first cards at the end, so the last real card is followed by the first ones
+    // Clone the first cards at the end, so the strip is never empty while it wraps around
     originals.slice(0, Math.min(total, 4)).forEach((card) => {
         const clone = card.cloneNode(true);
         clone.setAttribute("aria-hidden", "true");
         track.appendChild(clone);
     });
 
-    let index = 0;
-    let timer = null;
+    // The scrolling is done here, frame by frame, so the CSS transition is not wanted
+    track.classList.add("no-transition");
 
-    function cardStep() {
+    let loop = 0;       // width of the real cards plus their gaps: the distance after which the strip repeats
+    let offset = 0;     // how far the strip has scrolled, between 0 and loop
+    let hovering = false;
+    let focused = false;
+    let dragging = false;
+    let last = null;
+
+    function measure() {
         const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
-        return track.children[0].getBoundingClientRect().width + gap;
+        const step = track.children[0].getBoundingClientRect().width + gap;
+        loop = step * total;
     }
 
-    function go(i, animate) {
-        track.classList.toggle("no-transition", !animate);
-        index = i;
-        track.style.transform = `translateX(-${index * cardStep()}px)`;
-    }
-
-    // After sliding onto the clones, jump back to the matching real card without animating
-    function settle() {
-        if (index >= total) {
-            go(index - total, false);
+    function wrap() {
+        if (loop > 0) {
+            offset = ((offset % loop) + loop) % loop;
         }
     }
 
-    function next() {
-        go(index + 1, true);
-        if (reducedMotion.matches) {
-            settle();
-        }
+    function paint() {
+        track.style.transform = `translateX(${-offset}px)`;
     }
 
-    function prev() {
-        if (index === 0) {
-            go(total, false);
-            void track.offsetWidth;
-        }
-        go(index - 1, true);
-    }
-
-    function start() {
-        stop();
-        timer = setInterval(() => {
-            if (!document.hidden) {
-                next();
+    function frame(now) {
+        if (last !== null) {
+            const dt = Math.min(now - last, 100) / 1000;
+            if (!hovering && !focused && !dragging && !reducedMotion.matches && !document.hidden) {
+                offset += SPEED * dt;
+                wrap();
+                paint();
             }
-        }, AUTO_MS);
-    }
-
-    function stop() {
-        clearInterval(timer);
-        timer = null;
-    }
-
-    track.addEventListener("transitionend", (e) => {
-        if (e.target === track) {
-            settle();
         }
-    });
+        last = now;
+        requestAnimationFrame(frame);
+    }
 
     // Pause while the user hovers or focuses the strip
-    viewport.addEventListener("mouseenter", stop);
-    viewport.addEventListener("mouseleave", start);
-    viewport.addEventListener("focusin", stop);
-    viewport.addEventListener("focusout", start);
+    viewport.addEventListener("mouseenter", () => { hovering = true; });
+    viewport.addEventListener("mouseleave", () => { hovering = false; });
+    viewport.addEventListener("focusin", () => { focused = true; });
+    viewport.addEventListener("focusout", () => { focused = false; });
 
-    // Drag the strip with the mouse or a finger; it follows the pointer and snaps to the nearest card
+    // Drag the strip with the mouse or a finger; it follows the pointer and keeps going from where it was left
     let drag = null;
 
     viewport.addEventListener("pointerdown", (e) => {
         if (e.pointerType === "mouse" && e.button !== 0) {
             return;
         }
-        stop();
-        // The clones look the same as the first cards, so start from them to allow dragging backwards
-        if (index === 0) {
-            go(total, false);
-        }
-        drag = { x: e.clientX, base: index * cardStep(), step: cardStep() };
-        track.classList.add("no-transition");
+        dragging = true;
+        drag = { x: e.clientX, from: offset };
         viewport.classList.add("is-dragging");
         viewport.setPointerCapture(e.pointerId);
     });
 
     viewport.addEventListener("pointermove", (e) => {
         if (drag) {
-            track.style.transform = `translateX(${e.clientX - drag.x - drag.base}px)`;
+            offset = drag.from - (e.clientX - drag.x);
+            wrap();
+            paint();
         }
     });
 
-    function endDrag(e) {
+    function endDrag() {
         if (!drag) {
             return;
         }
-        const moved = Math.round((e.clientX - drag.x) / drag.step);
-        const target = Math.min(Math.max(index - moved, 0), total + 1);
         drag = null;
+        dragging = false;
         viewport.classList.remove("is-dragging");
-        go(target, true);
-        if (reducedMotion.matches) {
-            settle();
-        }
-        // A mouse is still over the strip, so autoplay resumes on mouseleave; a finger has left it
-        if (e.pointerType !== "mouse") {
-            start();
-        }
     }
 
     viewport.addEventListener("pointerup", endDrag);
     viewport.addEventListener("pointercancel", endDrag);
 
-    window.addEventListener("resize", () => go(index, false));
+    window.addEventListener("resize", () => {
+        measure();
+        wrap();
+        paint();
+    });
 
-    start();
+    measure();
+    // The webfonts change the height and width of the cards once loaded
+    if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(() => {
+            measure();
+            wrap();
+            paint();
+        });
+    }
+    requestAnimationFrame(frame);
 }
 
 // Header scroll background

@@ -2184,14 +2184,12 @@ a {
 /* Polish pass (audit items 8, 9, 11 and 12): reviews, service tiles, readability, mobile paragraph.
    Golds are now ffd074 on dark backgrounds (the old ffcc00 and e0b96a were folded into it) and the two darker golds on light ones. */
 
-/* Reviews: signatures on one line, a thin divider above each quote, the rating row on the same left edge as its label,
+/* Reviews: signatures on one line, no divider above the quotes (removed at the user's request), the rating row on the same left edge as its label (now centred, see the end of the file),
    and two cards per view on tablet instead of three cramped ones */
 
 .review-card {
     display: flex;
     flex-direction: column;
-    padding-top: 1.25rem;
-    border-top: 1px solid rgba(143, 107, 20, 0.35);
 }
 
 .review-card p {
@@ -3199,3 +3197,32 @@ footer p {
     }
 }
 
+/* Avis clients, centred (2026-11-11): the label, the quotes with their signatures, and the rating row with its stars and figures.
+   It was left-aligned on the column edge from 768px. */
+
+.reviews .reviews_label {
+    text-align: center;
+}
+
+.review-card {
+    align-items: center;
+    text-align: center;
+}
+
+.review-card p {
+    margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+
+    .reviews_rating {
+        justify-content: center;
+    }
+}
+
+/* The reviews strip scrolls on its own, so its two edges fade out softly instead of cutting the quotes in the middle of a word */
+
+.reviews_viewport {
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+}
