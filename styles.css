@@ -2512,3 +2512,103 @@ footer p {
     }
 }
 
+/* Nos soins: layout analysis of 2026-11-11 (the golden ratio, one vertical axis, even photos) */
+
+/* Desktop: the title block is 1/phi of a tile (272px for a 440px tile): 70px above the label and 43px below the title, which is also 1.618 : 1 */
+
+@media (min-width: 1100px) {
+
+    #soins_header {
+        padding-top: 70px;
+    }
+}
+
+/* Tablet: the four tiles share one height (the text decides it; the last one was 32px lower), so the photos have one shape */
+
+@media (min-width: 768px) and (max-width: 1099px) {
+
+    .soins {
+        min-height: 19.25rem;
+    }
+}
+
+/* Phones: the four photos are landscape 1.618 : 1 (the Massage one was 2.4 : 1 and the others 0.85 : 1), cut from the same 4 : 3 files as on desktop,
+   and the tile text starts on the 24px gutter instead of 42px */
+
+.soins_img_massage {
+    object-position: 0 0;
+}
+
+@media (max-width: 767px) {
+
+    .soins img.soins_img_landscape {
+        height: auto;
+        aspect-ratio: 1.618 / 1;
+    }
+
+    .soins .flex {
+        padding-inline: 1.5rem;
+    }
+}
+
+/* Réserver as a real button: solid white with dark text, padding 1 : 1.618 (14px by 23px, 48px tall), the same 4px radius
+   as the other buttons, the brighter gold on hover and focus, and the arrow slides. It only covers its own width (it used to be a full-width link). */
+
+.soins .flex a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    align-self: flex-start;
+    width: fit-content;
+    min-height: 48px;
+    box-sizing: border-box;
+    margin-block: 0;
+    padding: 0.875rem 1.4rem;
+    border: 1px solid #FFFFFF;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    color: #2C2822;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.soins .flex a::after {
+    content: "→";
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.soins .flex a:hover,
+.soins .flex a:focus-visible {
+    background-color: #FFD074;
+    border-color: #FFD074;
+    color: #2C2822;
+}
+
+.soins .flex a:hover::after,
+.soins .flex a:focus-visible::after {
+    transform: translateX(4px);
+}
+
+.soins .flex a:active {
+    transform: translateY(1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .soins .flex a,
+    .soins .flex a::after {
+        transition: none;
+    }
+}
+
+/* Tablet: the button adds 30px of height, so the four tiles share 21.2rem (339px) instead of 19.25rem */
+
+@media (min-width: 768px) and (max-width: 1099px) {
+
+    .soins {
+        min-height: 21.2rem;
+    }
+}
+
