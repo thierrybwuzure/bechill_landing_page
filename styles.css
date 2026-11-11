@@ -4369,3 +4369,20 @@ footer .social-icons a {
     content: none;
 }
 
+/* Nos soins: a separation line between the header and the first tile (2026-11-11, the user's request): a fine pale-gold line (1px, 35%, the colour of the credentials frame)
+   across the full width, along the bottom edge of the header. */
+
+#soins_header {
+    border-bottom: 1px solid rgba(232, 213, 163, 0.35);
+}
+
+/* Nos soins banner drawing, further left (2026-11-11, the user's request): it was on the right edge of the 1112px column; it now sits 9rem (144px) further in, so it is no longer
+   against the edge of the column. Same size and colour. */
+
+@media (min-width: 768px) {
+
+    #soins_header::after {
+        right: calc(max(1.5rem, (100% - 1112px) / 2) + 9rem);
+    }
+}
+
