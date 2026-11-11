@@ -4516,3 +4516,63 @@ footer .social-icons a {
         padding-block: 4.236rem;
     }
 }
+
+/* Nos soins, tile layout (2026-11-11, the user's request "more pro, more classy and fitting the other sections"). Colours, photos, tile sizes (1.618 : 1) and the Réserver
+   button are unchanged. What changes is where the text sits and how it is built:
+   - From 768px the text of every tile sits on the 1112px column used by all the other sections and is mirrored around the centre line: a tile with the text on the left
+     starts on the column's left edge (the same x as the section title), a tile with the text on the right ends on the column's right edge, and the gap to the photo is the same
+     (3.75rem) on both sides. Before, the text hugged the outer page edge in two tiles and the photo in the other two. Percentages resolve against the full row, so
+     50% - 556px is exactly (row width - 1112px) / 2 with no scrollbar error.
+   - The old stack of margins and paddings (40 + 20px on the title and paragraph, 60px on the button) is replaced by one padding on the tile, so title, paragraph and button
+     share one left edge.
+   - (The fine pale-gold rule above each title was added and then removed at the user's request.) The paragraph keeps a 30rem measure
+     (31rem = 496px = half the column minus the 3.75rem gap, about 52 characters). Phones: same structure on the 24px gutter, paragraph raised from 14px to 16px. */
+
+.soins .flex h3,
+.soins .flex p,
+.soins .flex a {
+    margin-left: 0;
+}
+
+.soins .flex h3 {
+    padding: 0 0 1rem;
+    margin-bottom: 0;
+}
+
+.soins .flex p {
+    max-width: 31rem;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 1.618rem;
+}
+
+
+@media (min-width: 768px) {
+
+    /* Photo and text are exactly one half each (border-box, so the text panel's padding no longer eats into the photo: above about 2000px the photo stayed at its
+       1000px file width and the text panel took the rest). */
+
+    .soins img,
+    .soins .flex {
+        flex: 0 0 50%;
+        width: 50%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    .soins .flex {
+        padding-inline: 3.75rem max(3.75rem, calc(50% - 556px));
+    }
+
+    .soins.flex_reverse .flex {
+        padding-inline: max(3.75rem, calc(50% - 556px)) 3.75rem;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .soins .flex p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+}
