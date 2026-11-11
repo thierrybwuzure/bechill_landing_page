@@ -2380,3 +2380,56 @@ footer p {
         margin-top: -15px;
     }
 }
+
+/* Service photos on tablet and desktop: landscape 1.618 : 1 (the golden ratio) instead of 4 : 3, so the tiles are about 18% lower.
+   The Massage photo keeps its top, where the Be Chill sign is. */
+
+@media (min-width: 768px) {
+
+    .soins img.soins_img_landscape {
+        aspect-ratio: 1.618 / 1;
+    }
+
+    .soins_img_massage {
+        object-position: 50% 0;
+    }
+}
+
+/* Nos soins title block: the neutral grey the site header had before (#2d2d2d), so it stands apart from the tiles' text panels (#765550) */
+
+#soins_header {
+    background-color: #2D2D2D;
+}
+
+/* Service tile text in the same type as Le toucher de l'ame: the title in weight 300 with no extra letter-spacing and in the pale gold
+   (#e8d5a3, 4.5:1 on the tile brown), the paragraph in DM Sans weight 300 (sizes stay as they are) */
+
+.soins .flex h3 {
+    font-weight: 300;
+    letter-spacing: normal;
+    color: #E8D5A3;
+}
+
+.soins .flex p {
+    font-weight: 300;
+}
+
+/* Service tile titles, one step up the scale: 24px on phones, 28px on tablet, 32px from 1100px (were 18, 25.6 and 25.6) */
+
+.soins .flex h3 {
+    font-size: 1.5rem;
+}
+
+@media (min-width: 768px) and (max-width: 1099px) {
+
+    .soins .flex h3 {
+        font-size: 1.75rem;
+    }
+}
+
+@media (min-width: 1100px) {
+
+    .soins .flex h3 {
+        font-size: 2rem;
+    }
+}
