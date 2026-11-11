@@ -3363,3 +3363,32 @@ footer p {
     }
 }
 
+/* Contact: the form was 658px wide (1.618 : 1 with the photo), too wide for fields with short answers. From 768px the form and the photo
+   split the column in two equal halves (532px at 1440), the same columns as the address and the hours in Nous trouver, so both sections
+   share one vertical axis. The submit button stays the form width divided by the golden ratio (about 329px). */
+
+@media (min-width: 768px) {
+
+    .contact_layout {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Contact: a placeholder that is too long for a very narrow field (320px phones) ends in an ellipsis instead of being cut */
+
+.contact-form input {
+    text-overflow: ellipsis;
+}
+
+/* Contact photo: slightly less tall (2026-11-11). It keeps the full column width (532px at 1440, same edges as the hours above) and its height
+   is the form height divided by the fourth root of the golden ratio (88.6%, about 412px at 1440 instead of 465px). It starts level with the
+   first label, so the extra space sits under the photo. */
+
+@media (min-width: 768px) {
+
+    .contact_photo {
+        align-self: start;
+        height: 88.6%;
+    }
+}
+
