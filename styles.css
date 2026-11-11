@@ -4576,3 +4576,9 @@ footer .social-icons a {
         margin-bottom: 1.5rem;
     }
 }
+
+/* Nos soins: no line under the header (2026-11-11, the user's request). Cancels the separation line added earlier; the header and the first tile now meet directly. */
+
+#soins_header {
+    border-bottom: 0;
+}
