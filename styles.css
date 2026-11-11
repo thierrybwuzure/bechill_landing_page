@@ -3991,3 +3991,13 @@ footer .social-icons a {
     scroll-margin-top: 63px;
 }
 
+/* Son parcours photo aligned with the paragraphs (2026-11-11). From 1000px the photo started at the top of the "Son parcours" title and ended at the bottom of the
+   last paragraph. It now spans the rows from the first paragraph to the last one (grid rows 2 to 6), so its top edge is level with the first line of the first
+   paragraph's box and its bottom edge with the end of the last paragraph; the title stays alone above the text. Between 768 and 999px it keeps its portrait ratio. */
+
+@media (min-width: 1000px) {
+
+    .formation_bio_photo {
+        grid-row: 2 / span 5;
+    }
+}
