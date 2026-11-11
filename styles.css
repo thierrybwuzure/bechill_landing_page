@@ -3953,3 +3953,32 @@ footer .social-icons a {
     border-radius: 12px;
 }
 
+/* Nous trouver: texture (2026-11-11). The same dark film grain (black noise at 12%) and soft dark vignette at the bottom (14%) as the Nos soins text tiles,
+   so the section is no longer a flat brown block that blends into the Contact section below it. A dark grain, not the white one of the Formation bands:
+   it keeps the section at least as dark as before, so the pale gold labels keep their contrast (a white grain lowers it). CSS only, no image file. */
+
+.nous_trouver {
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .12 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+        radial-gradient(ellipse 90% 50% at 50% 115%, rgba(0, 0, 0, 0.14), transparent 70%);
+    background-size: 240px 240px, 100% 100%;
+    background-repeat: repeat, no-repeat;
+}
+
+/* Nous trouver: the blocks inside the section (the address block, its text column) carried their own flat brown background, which showed as a lighter rectangle
+   on top of the textured section. They are transparent now, so the texture runs behind all of the content. */
+
+.nous_trouver .localisation,
+.nous_trouver .container-localisation,
+.nous_trouver .info-localisation,
+.nous_trouver .horaires,
+.nous_trouver .nous_header {
+    background-color: transparent;
+}
+
+/* Nous trouver: the new menu link lands with the section just under the 63px fixed bar, like the Nos soins link */
+
+#nous_trouver {
+    scroll-margin-top: 63px;
+}
+
