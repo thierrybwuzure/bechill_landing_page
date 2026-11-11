@@ -3437,3 +3437,107 @@ footer p {
     }
 }
 
+/* Formation bands: texture (2026-11-11). The students band already has film grain, a warm glow and a vignette. The two other bands now get the same
+   family of textures so the three read as one section: Son parcours (brown) the same white grain at 10% with a warm glow in the corner behind the
+   text, and the programme band (white) a fine dark grain at 5% on a faint warm cream gradient (paper). Both are CSS only, no image file. */
+
+.formation_band_bio {
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+        radial-gradient(ellipse 55% 70% at 8% 0%, rgba(255, 208, 116, 0.14), transparent 70%),
+        radial-gradient(ellipse 70% 50% at 100% 110%, rgba(0, 0, 0, 0.16), transparent 70%);
+}
+
+.formation_band_programme {
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .25 0 0 0 0 .18 0 0 0 0 .1 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+        linear-gradient(180deg, #fff 0%, #fbf8f1 100%);
+}
+
+/* Certification card in the style of the final Figma version (Version 4, "MagicHandCertificate"), at the size it already has (the card is
+   stretched to the height of the photo and keeps its width, so nothing around it moves). From Figma: a white card with a 1px border at 10% of
+   #2C2822 and a 12px radius (2.25px x 5.27), the star in a round gold-tinted badge (gold at 20%), the title in the heading font in gold, and
+   the three figures as separate tiles (#faf8f3, 4px radius, border at 5%) with gold numerals and muted labels. The Figma gold #ffd074 is
+   1.4:1 on white, so the title and numerals use the site's gold for light backgrounds (#A07A22, 4:1, large text) and the labels keep the darker
+   #5F5043; the Figma label size (10px) is kept at the site's 14px minimum. */
+
+.formation_certificate {
+    background-color: #fff;
+    border: 1px solid rgba(44, 40, 34, 0.1);
+    border-radius: 12px;
+}
+
+.certificate_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    margin-inline: auto;
+    border-radius: 50%;
+    background-color: rgba(255, 208, 116, 0.2);
+    color: var(--gold-numeral-on-light);
+    font-size: 1rem;
+}
+
+.formation_certificate h3 {
+    margin-top: 1rem;
+    padding-bottom: 0;
+    background: none;
+    color: var(--gold-numeral-on-light);
+}
+
+.certificate_stats {
+    gap: 0.618rem;
+    margin-top: 1.618rem;
+    border-top: 0;
+}
+
+.certificate_stats li {
+    padding: 0.75rem 0.25rem;
+    border: 1px solid rgba(44, 40, 34, 0.05);
+    border-radius: 4px;
+    background: #faf8f3;
+}
+
+.certificate_stats li + li {
+    border-left: 1px solid rgba(44, 40, 34, 0.05);
+}
+
+.certificate_stats strong {
+    color: var(--gold-numeral-on-light);
+}
+
+/* Certification card on very narrow phones: the three tiles share the width equally and the card padding is smaller, so they stay inside the card */
+
+@media (max-width: 359px) {
+
+    .formation_certificate {
+        padding-inline: 0.5rem;
+    }
+
+    .certificate_stats {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.3rem;
+    }
+
+    .certificate_stats li {
+        min-width: 0;
+        padding-inline: 0;
+    }
+
+    .certificate_stats strong {
+        font-size: 1.4rem;
+    }
+}
+
+/* Formation images: a deeper shadow (2026-11-11). The site-wide photo shadow (0 8px 24px at 14% black) almost disappears on the brown bands, now that they
+   have texture. A two-layer shadow instead: a wide soft one for the lift (0 22px 48px at 38%) and a tight one for the contact edge (0 4px 10px at 22%).
+   It applies to the Son parcours photo and the students photo, and to the Certification card that stands beside the photo, so the pair matches. */
+
+.formation_bio_photo,
+.students_photo,
+.formation_certificate {
+    box-shadow: 0 22px 48px rgba(0, 0, 0, 0.38), 0 4px 10px rgba(0, 0, 0, 0.22);
+}
+
