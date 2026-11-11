@@ -2820,3 +2820,209 @@ footer p {
     }
 }
 
+/* Programme and Certification band: the type of the other white sections (Immersion list text 17.6px, the Le toucher paragraph in weight 300),
+   the gold numerals at the Nos soins title scale, the 5px radius of the photos, and a darker muted text on the cream card (it was 3.8:1, now 7.7:1).
+   The content and the layout (1.618 : 1, same height) are unchanged. */
+
+.formation_programme,
+.formation_certificate {
+    border-radius: 5px;
+}
+
+.programme_list li {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #2C2822;
+}
+
+.programme_num {
+    flex-basis: 2.75rem;
+    font-size: 1.5rem;
+    color: var(--gold-numeral-on-light);
+}
+
+.formation_certificate h3 {
+    font-size: 1.75rem;
+}
+
+.formation_certificate p {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.65;
+    color: #5F5043;
+}
+
+.certificate_stats li {
+    border-radius: 4px;
+}
+
+.certificate_stats strong {
+    font-size: 1.75rem;
+}
+
+.certificate_stats span {
+    font-size: 0.875rem;
+    color: #5F5043;
+}
+
+@media (min-width: 768px) {
+
+    .programme_list li {
+        font-size: 1.1rem;
+    }
+}
+
+/* Certification card, sober and minimal (same content: the star, the title, the two lines, the three figures).
+   One hairline dark-gold frame on flat cream, the star as a small plain mark, the title in the heading font with a short hairline under it,
+   the two lines in plain light text, and the three figures as a quiet row between hairlines. A framed version with a double border,
+   corner ornaments, a medallion and italic text was tried and judged too much. */
+
+.formation_certificate {
+    --cert-gold: #A07A22;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2.5rem 2rem;
+    border: 1px solid rgba(160, 122, 34, 0.55);
+    border-radius: 5px;
+    background-color: #FBF8F1;
+    text-align: center;
+}
+
+.certificate_icon {
+    display: block;
+    color: var(--cert-gold);
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+.formation_certificate h3 {
+    margin: 1.25rem 0 0;
+    padding-bottom: 1.1rem;
+    background: linear-gradient(rgba(160, 122, 34, 0.55), rgba(160, 122, 34, 0.55)) bottom center / 2.5rem 1px no-repeat;
+    font-size: 1.75rem;
+    letter-spacing: 0.01em;
+}
+
+.formation_certificate p {
+    margin: 1.1rem 0 0;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.65;
+    color: #5F5043;
+}
+
+.certificate_stats {
+    gap: 0;
+    margin: 1.75rem 0 0;
+    border-top: 1px solid rgba(160, 122, 34, 0.35);
+}
+
+.certificate_stats li {
+    padding: 1.1rem 0.25rem 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+}
+
+.certificate_stats li + li {
+    border-left: 1px solid rgba(160, 122, 34, 0.25);
+}
+
+.certificate_stats strong {
+    color: var(--cert-gold);
+}
+
+@media (max-width: 1099px) {
+
+    .formation_certificate {
+        padding-inline: 1.5rem;
+    }
+}
+
+/* Option 1 (2026-11-11): the Certification card moves into the students band, beside the photo that shows the certificates
+   (photo left, card right, centred), and the programme steps have their band to themselves, with a label and a title like the other
+   sections and the list in one column (a two-column version was tried and the user preferred one column). */
+
+.students_row {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2.618rem;
+}
+
+.students_row .students_photo {
+    width: 100%;
+    margin-inline: 0;
+}
+
+.students_row .formation_certificate {
+    width: auto;
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+
+    /* Photo and card side by side, centred, at the sizes they had before (480 and 406 px, ratio 1.18 : 1): the card is not stretched across the column */
+
+    .students_row {
+        grid-template-columns: minmax(0, 1.18fr) minmax(0, 1fr);
+        gap: 3rem;
+        align-items: stretch;
+        max-width: 934px;
+        margin-inline: auto;
+    }
+
+    .students_row picture {
+        display: block;
+        align-self: center;
+    }
+
+    .formation_band_programme {
+        display: block;
+        padding-inline: 0;
+    }
+
+    .formation_band_programme .formation_programme {
+        width: min(1112px, 100% - 3rem);
+        margin-inline: auto;
+    }
+}
+
+.programme_list li span:not(.programme_num) {
+    text-wrap: balance;
+}
+
+/* Programme band header and list: centred like the students band, the list in one readable column of 44rem */
+
+.formation_band_programme .section_label,
+.formation_band_programme .section_title {
+    text-align: center;
+}
+
+.formation_band_programme .section_label {
+    color: var(--gold-on-light);
+}
+
+.formation_band_programme .section_title {
+    margin-bottom: 0.5rem;
+    color: #000;
+}
+
+.formation_band_programme .section_title span {
+    color: var(--gold-numeral-on-light);
+}
+
+.formation_band_programme .formation_programme {
+    max-width: 44rem;
+    margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+
+    .formation_band_programme .formation_programme {
+        margin-top: 2.618rem;
+    }
+}
+
