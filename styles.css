@@ -4500,3 +4500,19 @@ footer .social-icons a {
         padding-block: 4.236rem;
     }
 }
+
+/* Savoir-faire: the same white space above and below the content (2026-11-11, the user's request). The band split its free space 1 : 1.618 above : below (52px above the
+   label, 80px below the button at 1440) and its phone padding was 4.2rem above and 6.8rem below (70px / 109px). Now both are equal: the free space is split 1 : 1 on desktop,
+   and the padding is 4.236rem on both sides on phones and tablets. */
+
+.formation-hero::before,
+.formation-hero::after {
+    flex-grow: 1;
+}
+
+@media (max-width: 767px) {
+
+    .formation-hero {
+        padding-block: 4.236rem;
+    }
+}
