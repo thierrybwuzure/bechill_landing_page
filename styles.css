@@ -3694,3 +3694,16 @@ footer p {
 .soins img[src*="service-soin-visage"] {
     filter: sepia(0.2) saturate(0.82) hue-rotate(-6deg) brightness(1.01);
 }
+
+/* Nos soins text tiles: texture (2026-11-11). Film grain and a soft vignette, CSS only. Unlike the bands, the grain here is dark (black noise at 12%) and there
+   is no gold glow: a white grain or a glow lightens the brown and took the pale gold titles under 4.5:1 (3.4:1 measured), while a dark grain keeps the tile
+   at least as dark as before, so the contrast is unchanged. A soft dark vignette at the bottom (14%). Only the text tile gets it, the photo keeps its colours. */
+
+.soins .flex {
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .12 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+        radial-gradient(ellipse 90% 60% at 50% 115%, rgba(0, 0, 0, 0.14), transparent 70%);
+    background-size: 240px 240px, 100% 100%;
+    background-repeat: repeat, no-repeat;
+}
+
