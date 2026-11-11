@@ -3869,3 +3869,87 @@ footer .social-icons a {
     }
 }
 
+/* Certification card balanced with the photo (2026-11-11). From 1000px the card is 406 x 609px beside a dense photo, but its content was only 280px tall,
+   which left 164px of empty white above and below it. The content is scaled up so it fills about 62% of the card height (1 / golden ratio): a 48px badge,
+   the title at 2.05rem on one line, the text at 1.1rem and bigger figure tiles. The card keeps its size, and nothing changes below 1000px, where the card is narrower. */
+
+@media (min-width: 1000px) {
+
+    .certificate_icon {
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.35rem;
+    }
+
+    .formation_certificate h3 {
+        margin-top: 1.618rem;
+        font-size: 2.05rem;
+        white-space: nowrap;
+    }
+
+    .formation_certificate p {
+        margin-top: 1.25rem;
+        font-size: 1.15rem;
+    }
+
+    .certificate_stats {
+        gap: 0.75rem;
+        margin-top: 3rem;
+    }
+
+    .certificate_stats li {
+        padding: 1.45rem 0.25rem;
+    }
+
+    .certificate_stats strong {
+        font-size: 2.1rem;
+    }
+
+    .certificate_stats span {
+        margin-top: 0.25rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Students photo: the top is cropped (2026-11-11). From 1000px the photo is shown at 480 x 460 (ratio 1.04 : 1) instead of its full 59 : 75 portrait (480 x 609),
+   cut from the top (object-position: bottom), so the windows and the ceiling above the faces go and the faces, the three certificates and the thumbs-up stay.
+   The card beside it stretches to the same, shorter height. Below 1000px (tablets and phones) the photo keeps its full portrait: the card is narrower there and needs more height than a cropped photo. */
+
+@media (min-width: 1000px) {
+
+    .students_row .students_photo {
+        height: auto;
+        aspect-ratio: 480 / 460;
+        object-fit: cover;
+        object-position: center bottom;
+    }
+}
+
+/* Certification card, landscape (2026-11-11). From 1200px the students row uses the whole 1112px column, the one of every other section (edges at x=157
+   and x=1269 at 1440): the photo keeps its 480px and the card takes the rest, 584 x 460px (1.27 : 1, the square root of the golden ratio) instead of 406 x 460
+   (portrait). Between 1000 and 1199px the row keeps its 934px width and the card its 406px, because the column is not wide enough for a landscape card. */
+
+@media (min-width: 1200px) {
+
+    .students_row {
+        grid-template-columns: 480px minmax(0, 1fr);
+        max-width: 1112px;
+    }
+
+    .formation_certificate {
+        padding-inline: 3rem;
+    }
+}
+
+/* Certification card: square corners (2026-11-11, the user's call). The 12px radius taken from the Figma card is removed. */
+
+.formation_certificate {
+    border-radius: 0;
+}
+
+/* Students photo: rounded corners (2026-11-11, the user's call). 12px instead of 3px, on the photo only: the Certification card beside it stays square. */
+
+.students_row .students_photo {
+    border-radius: 12px;
+}
+
