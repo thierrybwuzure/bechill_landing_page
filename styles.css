@@ -4247,3 +4247,14 @@ footer .social-icons a {
     background-color: #5B392D;
 }
 
+/* Header logo, smaller on desktop (2026-11-11, "too big"). Its width was 60% of the centre cell, so it grew with the screen (116px at 1440, 156px at 1920) and at 1920
+   it even made the bar taller (72px instead of 63px). From 1000px it is now a fixed 5.5rem (88px wide, 31px tall), so the bar stays 63px at every width. Tablets and phones
+   keep their 60 to 65px logo. */
+
+@media (min-width: 1000px) {
+
+    .header_hand_logo {
+        width: 5.5rem;
+    }
+}
+
