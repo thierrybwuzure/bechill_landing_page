@@ -4054,3 +4054,10 @@ footer .social-icons a {
         content: none;
     }
 }
+
+/* "Découvrir la formation" (Savoir-faire) lands on the Formation band, the programme (#programme), with its top just under the 63px fixed bar like the other anchors.
+   It used to point at #formation-details, which starts with Son parcours. */
+
+#programme {
+    scroll-margin-top: 63px;
+}
