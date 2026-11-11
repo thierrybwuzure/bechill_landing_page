@@ -3674,3 +3674,23 @@ footer p {
     background-repeat: repeat, no-repeat, no-repeat, no-repeat;
 }
 
+/* Nos soins: the four photos graded to the site's warm palette (2026-11-11). They came from different phones and lights and clashed: a cool grey-beige
+   massage, a head spa in saturated magenta and violet, an orange drainage, a pink-red facial. CSS filters only (the files are untouched, so this is
+   easy to undo or tune). Each photo gets what it needs: warmth for the grey massage, a slight hue shift, strong desaturation and a warm sepia for the magenta head spa (a bigger hue shift turned the arch green),
+   and a light sepia and softer saturation for the two skin photos, so they all sit on the same brown. */
+
+.soins img[src*="service-massage"] {
+    filter: sepia(0.28) saturate(1.1) brightness(0.98) contrast(1.03);
+}
+
+.soins img[src*="service-head-spa"] {
+    filter: hue-rotate(14deg) saturate(0.4) sepia(0.45) brightness(1) contrast(1.05);
+}
+
+.soins img[src*="service-drainage"] {
+    filter: sepia(0.18) saturate(0.85) brightness(1.02);
+}
+
+.soins img[src*="service-soin-visage"] {
+    filter: sepia(0.2) saturate(0.82) hue-rotate(-6deg) brightness(1.01);
+}
