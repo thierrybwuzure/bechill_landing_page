@@ -2760,3 +2760,26 @@ footer p {
         letter-spacing: 0.04em;
     }
 }
+
+/* Savoir-faire refinements: the chips wrap two and two instead of three and one, and the vertical gaps follow the golden-ratio scale
+   (label 0.95rem, title 1.618rem, chips 2.618rem). The band height and its 1 : 1.618 vertical placement are unchanged. */
+
+.formation-hero .hero-title {
+    margin-bottom: 1.618rem;
+}
+
+.formation-hero .hero-badges {
+    max-width: 26rem;
+    margin: 0 auto 2.618rem;
+}
+
+@media (max-width: 479px) {
+
+    .formation-hero .hero-badges {
+        gap: 0.5rem;
+    }
+
+    .formation-hero .badge {
+        padding-inline: 0.875rem;
+    }
+}
