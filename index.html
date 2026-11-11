@@ -474,16 +474,18 @@
         <h2 class="section_title">Parlons<br><span>ensemble</span></h2>
         <div class="contact_layout">
             <form class="contact-form">
-                <input type="text" placeholder="Votre prénom" aria-label="Votre prénom" required>
-                <input type="text" placeholder="votre@email.com ou 04XX XX XX XX" aria-label="Email ou téléphone"
-                    required>
-                <textarea placeholder="Votre message, votre question..." aria-label="Votre message"
-                    required></textarea>
+                <label class="field"><span>Prénom</span>
+                    <input type="text" name="prenom" placeholder="Ex. Marie" autocomplete="given-name" required></label>
+                <label class="field"><span>Email ou téléphone</span>
+                    <input type="text" name="contact" placeholder="marie@mail.be ou 0470 12 34"
+                        autocomplete="email" required></label>
+                <label class="field"><span>Message</span>
+                    <textarea name="message" placeholder="Quel soin vous intéresse ? Quels jours vous conviennent ?" required></textarea></label>
                 <button type="submit">Envoyer le message</button>
             </form>
 
             <div class="contact_photo">
-                <img src="./asset/contact-photo.jpg" alt="" width="900" height="807" loading="lazy">
+                <img src="./asset/contact-photo-hands.jpg" alt="" width="1200" height="1049" loading="lazy">
             </div>
         </div>
     </section>

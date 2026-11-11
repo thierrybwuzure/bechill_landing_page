@@ -3261,3 +3261,69 @@ footer p {
     margin-top: 2.618rem;
 }
 
+/* Contact (2026-11-11): same language as Nous trouver. Pale gold instead of the bright yellow, a visible label above each field
+   (the Figma frame has them; placeholders alone disappear when typing), and the submit button keeps its original dark brown (#4A241D) and gold hover (the user asked to revert the white version). */
+
+.contact-section small,
+.contact-section h2 span {
+    color: #E8D5A3;
+}
+
+.contact-form {
+    gap: 1.618rem;
+}
+
+.contact-form .field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.618rem;
+}
+
+.contact-form .field span {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #E8D5A3;
+}
+
+.contact-form input,
+.contact-form textarea {
+    font-weight: 300;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #6b6258;
+    opacity: 1;
+}
+
+.contact-form button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    background: #4A241D;
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 0.618rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-form button:hover,
+.contact-form button:focus-visible {
+    background: #FFD074;
+    color: #4A241D;
+}
+
+@media (min-width: 768px) {
+
+    .contact-section {
+        padding-bottom: 6.854rem;
+    }
+}
+
