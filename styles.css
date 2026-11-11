@@ -4386,3 +4386,63 @@ footer .social-icons a {
     }
 }
 
+/* Header "Contact" button, restyled (2026-11-11, "class and pro"). It was bare white text. It is now an outlined button in the language of the site: a 1px pale-gold border (60%),
+   pale-gold uppercase text (14px, weight 500, tracking 0.14em), 4px corners, 44px tall, and on hover or keyboard focus a solid gold fill (#FFD074) with the header's dark brown
+   text, with a short transition. The gold ring on focus is the one of the dark sections. */
+
+.contact-btn {
+    min-height: 44px;
+    box-sizing: border-box;
+    padding: 0 1.4rem;
+    margin-left: 0.5em;
+    border: 1px solid rgba(232, 213, 163, 0.6);
+    border-radius: 4px;
+    background: transparent;
+    color: #E8D5A3;
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    line-height: 1;
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.contact-btn:hover,
+.contact-btn:focus-visible {
+    border-color: #FFD074;
+    background: #FFD074;
+    color: #130a05;
+}
+
+.contact-btn:focus-visible {
+    outline: 2px solid #FFD074;
+    outline-offset: 3px;
+}
+
+@media (max-width: 767px) {
+
+    .contact-btn {
+        padding: 0 1rem;
+        letter-spacing: 0.1em;
+    }
+}
+
+/* Header "Contact" button in the heading font (2026-11-11, the user's request): Bodoni Moda, the serif of the section titles, instead of DM Sans. A little larger (15px) and
+   less spaced (0.1em) than the sans version, because the thin strokes of a high-contrast serif need the room to stay readable at this size. */
+
+.contact-btn {
+    font-family: var(--font-heading);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+
+/* Header "Contact" button, not uppercase (2026-11-11, the user's request): the serif reads best in normal case ("Contact"). With no capitals the tracking is dropped to 0.02em and
+   the size raised to 17px (the serif's lowercase is small at 15px). */
+
+.contact-btn {
+    text-transform: none;
+    font-size: 1.0625rem;
+    letter-spacing: 0.02em;
+}
+
