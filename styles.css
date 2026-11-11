@@ -4457,3 +4457,25 @@ footer .social-icons a {
     filter: none;
 }
 
+/* Header "Contact" button, no border (2026-11-11, the user's request): the thin gold outline is removed, so at rest it is gold text on the dark bar; the gold fill with dark text on
+   hover and keyboard focus is unchanged. */
+
+.contact-btn,
+.contact-btn:hover,
+.contact-btn:focus-visible {
+    border: 0;
+}
+
+/* Nos soins, last photo (Visage anti-âge) placed lower in its box (2026-11-11, the user's request): the picture is shifted down inside the tile, so the top of the photo shows
+   (the hand and the forehead) and a little of the bottom (the fingers) is cropped. Same tile size and crop ratio; only object-position changes, from the centre (50% 50%)
+   to 50% 8%. */
+
+.soins img[src*="service-soin-visage"] {
+    object-position: 50% 8%;
+}
+
+/* "Réserver" buttons of Nos soins: no arrow (2026-11-11, the user's request). The four buttons keep their white fill, text and gold hover. */
+
+.soins .flex a::after {
+    content: none;
+}
