@@ -2628,3 +2628,135 @@ footer p {
     background-position: center 58%;
 }
 
+/* Savoir-faire: same style as the other sections (2026-11-11). The content is unchanged; only the order of the two links is, so the button comes first.
+   - Everything stays centred (the user's call, 2026-11-11; a left-aligned version on the column edge was tried first)
+   - Label in the section label style, title at the section title size (32px phone, 52px from 768px) with the gold italic words
+   - Facts as small chips with a faint fill and the 4px radius of the buttons (the pills were rounded at 20px); a hairline list with stars was tried and the user preferred the chips
+   - The button is the solid white button of the Nos soins tiles (4px radius, 48px tall, uppercase with an arrow), the link a quiet pale gold text link
+   - A flat brown-black overlay of 68%, the same as the Nos soins header, over a new photo: hands at work in soft light (Unsplash, Toa Heftiba, asset/savoir-faire.jpg);
+     the previous photo is asset/formation 1.png */
+
+.formation-hero {
+    background-image: linear-gradient(rgba(19, 10, 5, 0.68), rgba(19, 10, 5, 0.68)), url("asset/savoir-faire.jpg");
+    background-position: center 45%;
+}
+
+.formation-hero .hero-overlay {
+    zoom: 1;
+    padding: 0 24px;
+    max-width: min(32rem, 100%);
+    box-sizing: border-box;
+}
+
+.formation-hero .hero-tag {
+    margin: 0;
+    color: #FFD074;
+}
+
+.formation-hero .hero-title {
+    margin: 0.95rem 0 1.5rem;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+.formation-hero .hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.618rem;
+    margin: 0 0 2rem;
+}
+
+.formation-hero .badge {
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #FAF8F3;
+    font-size: 0.875rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem 1.618rem;
+}
+
+.formation-hero .hero-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    min-height: 48px;
+    box-sizing: border-box;
+    padding: 0.875rem 1.4rem;
+    border: 1px solid #FFFFFF;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    color: #2C2822;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.formation-hero .hero-button::after {
+    content: "→";
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.formation-hero .hero-button:hover,
+.formation-hero .hero-button:focus-visible {
+    background-color: #FFD074;
+    border-color: #FFD074;
+}
+
+.formation-hero .hero-button:hover::after,
+.formation-hero .hero-button:focus-visible::after {
+    transform: translateX(4px);
+}
+
+.formation-hero .hero-link {
+    display: inline-block;
+    width: auto;
+    margin: 0;
+    padding-block: 12px;
+    color: #E8D5A3;
+    font-size: 0.875rem;
+    text-decoration: underline;
+    text-decoration-color: rgba(232, 213, 163, 0.5);
+    text-underline-offset: 0.35em;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.formation-hero .hero-link:hover,
+.formation-hero .hero-link:focus-visible {
+    color: #FFFFFF;
+    text-decoration-color: #FFFFFF;
+}
+
+@media (min-width: 768px) {
+
+    .formation-hero .hero-overlay {
+        padding: 0;
+    }
+
+    .formation-hero .hero-title {
+        font-size: 3.25rem;
+    }
+}
+
+@media (max-width: 479px) {
+
+    .formation-hero .hero-button {
+        padding-inline: 1rem;
+        letter-spacing: 0.04em;
+    }
+}
