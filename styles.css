@@ -4446,3 +4446,14 @@ footer .social-icons a {
     letter-spacing: 0.02em;
 }
 
+/* Nos soins photos: no filters (2026-11-11, the user's request). Both colour grades above (the first and the warmer one) are cancelled, so the four photos show in their own
+   colours. The grade blocks are left in place so it is easy to bring one back: delete this rule. */
+
+.soins img,
+.soins img[src*="service-massage"],
+.soins img[src*="service-head-spa"],
+.soins img[src*="service-drainage"],
+.soins img[src*="service-soin-visage"] {
+    filter: none;
+}
+
