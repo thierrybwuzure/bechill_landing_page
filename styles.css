@@ -3392,3 +3392,25 @@ footer p {
     }
 }
 
+/* Footer: same colour as the header bar (#130a05, 2026-11-11). Text and icons turn light (the icons are black SVGs, inverted to white at 78%),
+   the hover keeps the small zoom, and the keyboard focus ring turns gold like on the other dark areas. */
+
+footer {
+    background: #130a05;
+    color: rgba(255, 255, 255, 0.78);
+    --focus-ring: #FFD074;
+}
+
+footer p {
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.social-icons img {
+    filter: brightness(0) invert(1) opacity(0.78);
+}
+
+.social-icons a:hover img,
+.social-icons a:focus-visible img {
+    filter: brightness(0) invert(1);
+    box-shadow: none;
+}
