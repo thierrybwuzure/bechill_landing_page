@@ -2433,3 +2433,82 @@ footer p {
         font-size: 2rem;
     }
 }
+
+/* Hero composition: the photo is portrait and its face sits right of centre, so the text must not cover it.
+   Portrait tablets (768 to 999px): the logo and the tag stay at the top and the title, subtitle and button sit at the bottom
+   (margin-top: auto on the title), which leaves a clear band for the face in the middle.
+   Phones (under 768px) keep the previous centred hero, which the user prefers.
+   Wide and landscape screens: the same elements in a left column (28rem, at most 42% of the width) on the left edge of the 1112px column. */
+
+@media (min-width: 768px) {
+
+    .hero-container {
+        justify-content: flex-start;
+        padding: calc(63px + 1.5rem) 25px 2.5rem;
+    }
+
+    .hero-p1 {
+        margin-top: auto;
+    }
+}
+
+@media (min-width: 1000px), (min-width: 700px) and (orientation: landscape) {
+
+    .hero-container {
+        justify-content: center;
+        align-items: flex-start;
+        padding: calc(63px + 2rem) max(24px, calc((100% - 1112px) / 2)) 3rem;
+        background-position: 0 0, center;
+        text-align: left;
+    }
+
+    /* 28rem, at most 42% of the width, and never past the left edge of the face (about 44% of the screen width) */
+
+    .hero-container > *:not(.hero-video) {
+        max-width: min(28rem, 42%, calc(44vw - max(24px, (100vw - 1112px) / 2) - 1.5rem));
+    }
+
+    .logo_typo {
+        width: 13rem;
+    }
+
+    .hero-container small {
+        text-align: left;
+    }
+
+    .hero-p1 {
+        width: 100%;
+        margin-top: 0;
+        line-height: 1.2;
+        text-align: left;
+        text-wrap: balance;
+    }
+
+    .hero-p2 {
+        text-align: left;
+    }
+
+    /* Each half of the title is one unit: "Prenez soin de" / "votre esprit" and "en prenant soin de" / "votre corps" (phones keep the free wrapping) */
+
+    .hero-p1 .nw {
+        white-space: nowrap;
+    }
+}
+
+/* Hero tuning: compact hero on short landscape screens, so the button stays on screen */
+
+@media (min-width: 700px) and (orientation: landscape) and (max-height: 780px) {
+
+    .logo_typo {
+        width: 9rem;
+    }
+
+    .hero-p1 {
+        font-size: 2.4rem;
+    }
+
+    .cta1 {
+        margin-top: 1.5rem;
+    }
+}
+
