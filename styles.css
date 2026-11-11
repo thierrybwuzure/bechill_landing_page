@@ -3414,3 +3414,26 @@ footer p {
     filter: brightness(0) invert(1);
     box-shadow: none;
 }
+
+/* FAQ (2026-11-11): the section had 60px above and below while Avis clients and Nous trouver have the golden steps, so it looked tight between them.
+   Same steps now: 4.236rem on phones, 6.854rem from 768px. */
+
+.faq-section {
+    padding-block: 4.236rem;
+}
+
+@media (min-width: 768px) {
+
+    .faq-section {
+        padding-block: 6.854rem;
+    }
+
+    /* The italic "f" of "fréquentes" hangs 0.2em to the left of the column edge (measured 10.6px at 52px; the other italic titles start inside it),
+       so the word is moved right by that overhang and the ink of both title lines starts on the same edge. Desktop only: on phones the title is centred. */
+
+    .faq-section .section_title span {
+        display: inline-block;
+        padding-left: 0.2em;
+    }
+}
+
