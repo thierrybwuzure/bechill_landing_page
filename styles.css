@@ -2612,3 +2612,19 @@ footer p {
     }
 }
 
+/* Nos soins title block: the menu link lands with the block just under the 63px fixed bar */
+
+#soins_header {
+    scroll-margin-top: 63px;
+}
+
+/* Nos soins title block: a dark photo behind the title (a therapist's hands on a back, seen from above; Unsplash, Katherine Hanlon, 2400 px wide)
+   under a dark brown overlay of 68%, so the white title and the gold label and italic words stay readable */
+
+#soins_header {
+    background-color: #2D2D2D;
+    background-image: linear-gradient(rgba(19, 10, 5, 0.68), rgba(19, 10, 5, 0.68)), url("asset/soins-header.jpg");
+    background-size: cover;
+    background-position: center 58%;
+}
+
