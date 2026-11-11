@@ -4081,3 +4081,34 @@ footer .social-icons a {
     filter: sepia(0.34) saturate(0.92) hue-rotate(-4deg) brightness(1.01);
 }
 
+/* Hero, desktop (2026-11-11, "is the hero too big?"). Same media query as the desktop hero above; phones and tablets are untouched.
+   1. The title fits on two lines ("Prenez soin de votre esprit" / "en prenant soin de votre corps") instead of four: the text column is capped so that it never reaches the
+      model's face, so the type is sized to that column (between 1.5rem and 2.15rem: 34px at 1440, about 32px at 1920) instead of widening the column.
+   2. The hand logo goes from 13rem (208px) to 8.75rem (140px).
+   3. The button has the size of the other buttons of the page: 14px text, about 50px tall, instead of 273 x 69px.
+   4. (An 88%-of-the-screen height, so the top of Philosophie would peek in, was applied and removed at the user's request: the hero is the full screen height again.) */
+
+@media (min-width: 1000px), (min-width: 700px) and (orientation: landscape) {
+
+    .hero-p1 {
+        /* the size follows the text column (the same cap as above, divided by 12.9: the width of the longer line in em), so it stays on two lines at every desktop width */
+        font-size: clamp(1.5rem, min(2.4vw, calc((44vw - max(24px, (100vw - 1112px) / 2) - 1.5rem) / 12.9)), 2.15rem);
+    }
+
+    .logo_typo {
+        width: 8.75rem;
+    }
+
+    .hero-p2 {
+        text-wrap: balance;
+    }
+
+    .cta1 {
+        width: auto;
+        padding: 0.9rem 1.75rem;
+        margin-top: 1.618rem;
+        font-size: 0.875rem;
+        letter-spacing: 0.12em;
+        line-height: 1.5;
+    }
+}
