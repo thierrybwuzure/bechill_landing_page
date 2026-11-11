@@ -4582,3 +4582,11 @@ footer .social-icons a {
 #soins_header {
     border-bottom: 0;
 }
+
+/* Chocolate with less rose (2026-11-11, the user's request "remove a bit of the rosy tint"): the brown token goes from #765550 (hue 8 degrees) to #76564A (hue 16 degrees), the same
+   lightness, so it is a little less pink and a little more brown. Contrast is unchanged (pale gold #E8D5A3 4.52:1, was 4.54; white 6.56:1, was 6.59). It is the token, so every
+   section that uses it (Nos soins, Son parcours, Certification, Nous trouver) changes together and the page keeps one brown. Contact keeps its own taupe #735f52. */
+
+:root {
+    --card-color-primary: #76564A;
+}
