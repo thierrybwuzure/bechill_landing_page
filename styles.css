@@ -4112,3 +4112,138 @@ footer .social-icons a {
         line-height: 1.5;
     }
 }
+
+/* Nos soins title block: more white space below the title (2026-11-11). The block had 43px under "L'essentiel du bien-être" (70px above the label); it now has
+   2.618rem + 1.618rem = 68px, about the same as the space above, so the title sits centred in its band. */
+
+#soins_header {
+    padding-bottom: 4.236rem;
+}
+
+/* Nos soins title block on white (2026-11-11, the user's request). The dark photo and its overlay are removed; the block is white like the Immersion header, with the
+   dark-on-light type of the other white sections: label in --gold-on-light (4.9:1), title in black, the italic words in --gold-numeral-on-light (4:1, large text).
+   The photo file asset/soins-header.jpg is no longer used. */
+
+#soins_header {
+    background-color: #fff;
+    background-image: none;
+}
+
+#soins_header .section_label {
+    color: var(--gold-on-light);
+}
+
+#soins_header .section_title {
+    color: #000;
+}
+
+#soins_header .section_title span,
+#soins_header .section_title i {
+    color: var(--gold-numeral-on-light);
+}
+
+/* (The gold line at the bottom of Philosophie was removed at the user's request, 2026-11-11: the cream Nos soins header now separates the two sections.) */
+
+/* Nos soins title centred (2026-11-11, the user's request). Same title, label and colours; only the alignment changes, like Philosophie and the Formation bands.
+   It was left-aligned on the 1112px column from 768px. */
+
+#soins_header .section_label,
+#soins_header .section_title {
+    width: auto;
+    margin-inline: auto;
+    text-align: center;
+}
+
+/* Nos soins header on cream paper (2026-11-11, the user's request: a texture or a cream background). The same paper as the FAQ section and the programme band: a fine dark grain
+   (5%, 240px tile) on a vertical gradient from #fbf8f1 to #f6f1e7. It also separates the header from the white Philosophie section above it. The text colours are unchanged
+   (contrast re-measured on the cream). */
+
+#soins_header {
+    background-color: #f9f5ec;
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .25 0 0 0 0 .18 0 0 0 0 .1 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+        linear-gradient(180deg, #fbf8f1 0%, #f6f1e7 100%);
+    background-size: 240px 240px, 100% 100%;
+    background-repeat: repeat, no-repeat;
+}
+
+/* On the cream the label gold (#8F6B14) measured 4.4:1, just under 4.5:1 for small text, so it is darkened one step here */
+
+#soins_header .section_label {
+    color: #7F5E10;
+}
+
+/* Nos soins header, part of the tile stack (2026-11-11, the user found it disconnected from the tiles). It takes the warm brown of the tile text panels (--card-color-primary,
+   #765550) with the same dark grain (black noise at 12%) and soft dark vignette at the bottom, so it reads as one more tile; the title stays centred, on the seam of the first
+   tile. Text: label and italic words in the pale gold of the tile titles (#E8D5A3, 4.5:1 on this brown), the title in white. The cream paper version is replaced. */
+
+#soins_header {
+    background-color: var(--card-color-primary);
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .12 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+        radial-gradient(ellipse 90% 60% at 50% 115%, rgba(0, 0, 0, 0.14), transparent 70%);
+    background-size: 240px 240px, 100% 100%;
+    background-repeat: repeat, no-repeat;
+}
+
+#soins_header .section_label {
+    color: #E8D5A3;
+}
+
+#soins_header .section_title {
+    color: #fff;
+}
+
+#soins_header .section_title span,
+#soins_header .section_title i {
+    color: #E8D5A3;
+}
+
+/* Nos soins title left-aligned again (2026-11-11, the user's request): on the left edge of the 1112px column from 768px, like the other section headers (x=157 at 1440).
+   It stays centred on phones. The brown tile background is kept. */
+
+@media (min-width: 768px) {
+
+    #soins_header .section_label,
+    #soins_header .section_title {
+        width: min(1112px, 100% - 3rem);
+        margin-inline: auto;
+        text-align: left;
+    }
+}
+
+/* Nos soins banner, decoration on the right (2026-11-11). The brand drawing of the hands with their rays (the one of the Immersion section, asset/BE CHILL illu.png) as a
+   pale-gold mask at 30% (the same crop as in Immersion), sitting on the right edge of the 1112px column and centred vertically in the band, so the empty right side of the
+   brown banner is filled and the drawing faces the title. Decorative only (a pseudo-element, so it is not read out) and hidden on phones, where the title is centred. */
+
+@media (min-width: 768px) {
+
+    #soins_header {
+        position: relative;
+    }
+
+    #soins_header::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: max(1.5rem, calc((100% - 1112px) / 2));
+        width: clamp(200px, 22vw, 300px);
+        aspect-ratio: 1.19 / 1;
+        background-color: #E8D5A3;
+        opacity: 0.3;
+        -webkit-mask: url("asset/BE CHILL illu.png") 42% 15% / 161% auto no-repeat;
+        mask: url("asset/BE CHILL illu.png") 42% 15% / 161% auto no-repeat;
+        transform: translateY(-50%);
+        pointer-events: none;
+    }
+}
+
+/* Nos soins, a more classic chocolate (2026-11-11, the user's request). The rosy brown #765550 of the header and of the four tile text panels is replaced by a deeper, warmer
+   cocoa, #5B392D, with no pink in it (candidates tried: #4A2F27 espresso, too dark next to the photos, and #6A4535 mocha, slightly orange). Contrast: pale gold #E8D5A3 7:1,
+   white 10.2:1 (it was 4.5:1 and 6.6:1). The grain and the vignette stay. Only the Nos soins block changes; the other brown sections keep #765550. */
+
+#soins_header,
+.soins .flex {
+    background-color: #5B392D;
+}
+
